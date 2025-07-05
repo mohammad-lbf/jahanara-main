@@ -1,0 +1,25 @@
+.audioPlayer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.audioElement {
+    width: 100%;
+    margin: auto;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* مخفی کردن دکمه قطع صدا */
+.audioElement::-webkit-media-controls-mute-button {
+    display: none;
+}
+
+
+

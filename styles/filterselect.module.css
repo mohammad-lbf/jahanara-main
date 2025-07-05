@@ -1,0 +1,45 @@
+.container {
+
+    /* height: 100vh; برای تنظیم فرم در مرکز صفحه */
+    /* background-color: #f0f4f8; */
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgb(44, 35, 208);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(82, 82, 82, 0.359);
+  }
+  
+  .label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: rgb(235, 235, 235);
+  }
+  
+  .selectBox {
+    width: 200px;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-family: 'KalamehWeb-Bold';
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+    color: rgb(50, 50, 50);
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .selectBox:hover {
+    border-color: #007bff;
+  }
+  
+  .selectBox:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+  

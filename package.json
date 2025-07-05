@@ -1,0 +1,44 @@
+{
+  "name": "hamyar-jahanara",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
+    "bootstrap": "^5.3.3",
+    "framer-motion": "^11.18.2",
+    "jalali-moment": "^3.3.11",
+    "js-cookie": "^3.0.5",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.487.0",
+    "luxon": "^3.6.0",
+    "mammoth": "^1.8.0",
+    "moment-jalaali": "^0.10.4",
+    "next": "14.2.3",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^3.11.174",
+    "persian-number": "^1.6.0",
+    "persianjs": "^0.4.0",
+    "react": "^18",
+    "react-bootstrap": "^2.10.5",
+    "react-dom": "^18",
+    "react-icons": "^5.5.0",
+    "react-leaflet": "^4.2.1",
+    "react-pdf": "^9.1.1",
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3"
+  }
+}
