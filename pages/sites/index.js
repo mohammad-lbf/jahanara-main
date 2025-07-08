@@ -5,6 +5,7 @@ import { FaLink, FaUserCircle, FaClipboardList, FaChalkboardTeacher } from "reac
 import { useRouter } from "next/router";
 import SitesPage from "@/components/templates/SitesPage";
 import DefaultLayout from "@/components/layout/DefaultLayout";
+import Link from "next/link";
 
 const sitesData = [
     {
