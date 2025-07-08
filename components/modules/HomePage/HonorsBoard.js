@@ -73,7 +73,7 @@ function CounterItem({ icon: Icon, label, endValue, showPlus = false, bgColor, t
           border: `2px solid ${textColor}`,
         }}
       >
-        <Icon size={40} color={textColor} className="mb-2" />
+        <Icon size={40} color={textColor} className="mb-2 " />
         <span
           style={{
             fontFamily: "KalamehWeb-Bold",

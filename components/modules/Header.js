@@ -19,7 +19,7 @@ const Header = () => {
                         </div>
                         <div className={`header-nav w-100`}>
                             <nav className={`d-none d-xl-flex align-items-center w-100`}>
-                                <ul className={`main-menu me-4 d-flex justify-content-start align-items-center`}>
+                                <ul className={`main-menu me-4 mb-0 ps-0 d-flex justify-content-start align-items-center`}>
                                     <li className='ms-3'><Link style={{fontFamily:"KalamehWeb-Bold" , }} className={`p-0 ${pathname == "/" ? "active" : "text-dark"}`} href={"/"}>صفحه اصلی</Link></li>
                                     <li className='has-children mx-3'>
                                         <Link style={{fontFamily:"KalamehWeb-Bold" , }} className={`p-0 ${pathname == "/sites" ? "active" : "text-dark"}`}  href={"/sites"}>

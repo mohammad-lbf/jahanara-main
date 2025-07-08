@@ -1,8 +1,10 @@
+import DefaultLayout from '@/components/layout/DefaultLayout';
 import Skills from '@/components/modules/Skills';
 import React from 'react';
 
 const AboutDeveloper = () => {
     return (
+      <DefaultLayout>
         <div className="container page-padding-tops">
         <div className='pt-4 mt-2 mb-2 row justify-content-center'>
               <div className='col-12 col-sm-10 py-4 border my-4 rounded bg-white shadow-sm'>
@@ -59,7 +61,8 @@ const AboutDeveloper = () => {
               <Skills />
               </div>
         </div>
-      </div>
+        </div>
+      </DefaultLayout>
     );
 };
 

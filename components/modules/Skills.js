@@ -4,9 +4,9 @@ const Skills = () => {
     return (
         <div className="container">
             <div className="row flex-lg-row-reverse">
-                <div className="col-12 px-lg-0 py-3">
-                <h4 style={{fontSize:"17px" , fontFamily:"KalamehWeb-Bold"}} className=" text-center text-lg-end px-0">مهارت های توسعه دهنده</h4>
-                <div style={{width:"170px"}} className="lbf-after-card-img mx-lg-0 mx-auto"></div>
+                <div className="col-12 px-lg-0 text-center py-3">
+                <h4 style={{fontSize:"17px" , fontFamily:"KalamehWeb-Bold"}} className=" text-center px-0">مهارت های توسعه دهنده</h4>
+                <div style={{width:"170px"}} className="lbf-after-card-img mx-auto"></div>
                 </div>
                 <Skill skill={"HTML"} image={"/images/components/modules/skills/html.png"} />
                 <Skill skill={"CSS"} image={"/images/components/modules/skills/css.png"} />

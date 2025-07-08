@@ -68,7 +68,7 @@ export default function AutoCounterPersian() {
       }}
     >
       <h1
-        className="lh-lg fs-3"
+        className="lh-lg fs-3 text-black"
         style={{
           margin: "0 0 20px",
           fontFamily: "KalamehWeb-Bold",

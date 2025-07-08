@@ -1,0 +1,238 @@
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import FirstBanner from "./modules/HomePage/FirstBanner";
+import BasesMenu from "./modules/BasesMenu";
+
+const SectionTitle = ({ title, description }) => (
+  <div className="container bg-white rounded shadow border py-4 my-3">
+    <div className="row align-items-center">
+      <div className="col-12 col-lg-7">
+        <h2
+          className="text-center text-lg-end"
+          style={{
+            fontSize: "25px",
+            fontFamily: "KalamehWeb-Bold",
+            color: "#03004e",
+          }}
+        >
+          {title}
+        </h2>
+        <p
+          className="mt-3 mb-4 mb-lg-0 text-center text-lg-end"
+          style={{
+            fontSize: "15px",
+            fontFamily: "KalamehWeb-Medium",
+            color: "#000",
+            lineHeight: "1.6rem",
+          }}
+        >
+          {description}
+        </p>
+      </div>
+      <div className="col-12 col-lg-5 text-center text-lg-start">
+        {title.includes("پایه") ? (
+          <Image
+            style={{ width: "100px", height: "100px" }}
+            src={"/images/components/modules/bases.png"}
+            width={512}
+            height={512}
+            alt="bases"
+          />
+        ) : (
+          <Image
+            style={{ width: "100px", height: "100px" }}
+            src={"/images/components/modules/books.png"}
+            width={512}
+            height={512}
+            alt="books"
+          />
+        )}
+      </div>
+    </div>
+  </div>
+);
+
+const CardsGrid = ({ cards }) => (
+  <div className="container my-5">
+    <div className="row align-items-center justify-content-center">
+      {cards.map((card, idx) => (
+        <div
+          key={idx}
+          className="col-12 col-md-6 col-xl-4 col-xxl-3 d-flex justify-content-center"
+        >
+          <div
+            className="bg-white rounded border shadow-sm d-flex flex-column align-items-center mb-3"
+            style={{ width: "300px", height: "185px" }}
+          >
+            <Link
+              className="py-3 text-center"
+              style={{ width: "300px", height: "185px" }}
+              href={card.href}
+            >
+              <Image
+                style={{ width: "100px", height: "100px" }}
+                src={card.image}
+                width={512}
+                height={512}
+                alt={card.title}
+              />
+              <p
+                className="mt-4"
+                style={{
+                  fontSize: "20px",
+                  fontFamily: "KalamehWeb-Bold",
+                  color: "#03004e",
+                }}
+              >
+                {card.title}
+              </p>
+            </Link>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const AboutDeveloperSection = () => (
+  <div className="container bg-white rounded shadow border py-5 px-5 mb-3">
+    <div className="row align-items-center">
+      <div className="col-12 col-lg-7">
+        <h2
+          className="text-center text-lg-end mb-3"
+          style={{
+            fontSize: "25px",
+            fontFamily: "KalamehWeb-Bold",
+            color: "#03004e",
+          }}
+        >
+          درباره توسعه‌دهنده
+        </h2>
+        <p
+          className=" mb-4"
+          style={{
+            fontSize: "15px",
+            fontFamily: "KalamehWeb-Medium",
+            color: "#464749",
+            lineHeight: "1.9",
+            direction:"rtl",
+            textAlign:"justify"
+          }}
+        >
+          سامانه همیار معلم توسط محمد لبافی، آموزگار و توسعه‌دهنده ارشد وب
+          (Senior MERN Stack Developer) طراحی و پیاده‌سازی شده است تا مسیر
+          آموزش را برای معلمان و دانش‌آموزان دبستان شهید جهان‌آرا آسان‌تر
+          و حرفه‌ای‌تر کند.
+        </p>
+        <div className="text-center text-lg-end">
+          <Link
+            href="/hamyar/about-developer"
+            className="btn btn-success"
+            style={{
+              backgroundColor: "#059212",
+              fontFamily: "KalamehWeb-Bold",
+              fontSize: "14px",
+            }}
+          >
+            مشاهده اطلاعات بیشتر
+          </Link>
+        </div>
+      </div>
+      <div className="col-12 col-lg-5 text-center mt-4 mt-lg-0">
+        <Image
+          src="/images/20220719_222926.jpg"
+          alt="محمد لبافی"
+          width={180}
+          height={180}
+          style={{ borderRadius: "50%" }}
+        />
+      </div>
+    </div>
+  </div>
+);
+
+const HamyarTemplate = () => {
+  const baseCards = [
+    {
+      title: "پایه سوم",
+      href: "/sevom",
+      image: "/images/components/modules/number-3.png",
+    },
+    {
+      title: "پایه چهارم",
+      href: "/chaharom",
+      image: "/images/components/modules/number-4.png",
+    },
+    {
+      title: "پایه پنجم",
+      href: "/panjom",
+      image: "/images/components/modules/number-5.png",
+    },
+    {
+      title: "پایه ششم",
+      href: "/sheshom",
+      image: "/images/components/modules/number-6.png",
+    },
+  ];
+
+  const booksCards = [
+    {
+      title: "کتابهای درسی پایه سوم",
+      href: "/sevom/books",
+      image: "/images/components/modules/number-3.png",
+    },
+    {
+      title: "کتابهای درسی پایه چهارم",
+      href: "/chaharom/books",
+      image: "/images/components/modules/number-4.png",
+    },
+    {
+      title: "کتابهای درسی پایه پنجم",
+      href: "/panjom/books",
+      image: "/images/components/modules/number-5.png",
+    },
+    {
+      title: "کتابهای درسی پایه ششم",
+      href: "/sheshom/books",
+      image: "/images/components/modules/number-6.png",
+    },
+  ];
+
+  return (
+    <div className="page-padding-tops">
+      <FirstBanner />
+
+      {/* منوی ابزار پایه ها */}
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className=" pt-2">
+            <h3
+              style={{
+                fontSize: "24px",
+                fontFamily: "KalamehWeb-Bold",
+                color: "#03004e",
+              }}
+              className="mb-4 mt-3 pt-2 text-center"
+            >
+              ورود به پایه تحصیلی:
+            </h3>
+            <BasesMenu />
+          </div>
+        </div>
+      </div>
+
+      {/* سکشن کتاب های درسی */}
+      <SectionTitle
+        title="کتابهای درسی"
+        description="برای دریافت جدیدترین ویرایش کتابهای درسی پایه خود، روی پایه مورد نظر کلیک کنید"
+      />
+      <CardsGrid cards={booksCards} />
+
+      {/* سکشن درباره توسعه دهنده */}
+      <AboutDeveloperSection />
+    </div>
+  );
+};
+
+export default HamyarTemplate;

@@ -6,6 +6,7 @@ import ContactInfo from "@/components/modules/HomePage/ContactInfo";
 import HonorsBoard from "@/components/modules/HomePage/HonorsBoard";
 import Teachers from "@/components/modules/Teachers";
 import { useRouter } from "next/router";
+import DefaultLayout from "@/components/layout/DefaultLayout";
 
 const AboutSchool = () => {
   const router = useRouter();
@@ -69,7 +70,7 @@ const AboutSchool = () => {
           content="https://jahanaraschool.ir/images/og-image.jpg"
         />
       </Head>
-
+      <DefaultLayout>
       <main className="container page-padding-tops pb-4">
         <div className="pt-4 mt-2 mb-2 row justify-content-center">
           <div className="col-12 col-sm-10 py-4 border my-4 rounded bg-white shadow-sm">
@@ -181,6 +182,7 @@ const AboutSchool = () => {
           </div>
         </div>
       </main>
+      </DefaultLayout>
     </>
   );
 };

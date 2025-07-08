@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import HomePage from "@/components/templates/HomePage";
+import DefaultLayout from "@/components/layout/DefaultLayout";
 
 export default function Home() {
   const router = useRouter();
@@ -53,9 +54,11 @@ export default function Home() {
         <meta name="twitter:description" content="دبستان شهید جهان‌آرا یکی از مدارس برجسته و فعال در منطقه ۱۲ تهران است که با فراهم آوردن محیطی امن و دوستانه، نقش مهمی در ارتقای کیفیت آموزش ابتدایی ایفا می‌کند." />
         <meta name="twitter:image" content="https://jahanaraschool.ir/images/og-image.jpg" />
       </Head>
+      <DefaultLayout>
       <main style={{ minHeight: "100vh" }}>
         <HomePage />
       </main>
+      </DefaultLayout>
     </>
   );
 }

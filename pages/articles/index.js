@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import ArticlesPage from "../../components/templates/ArticlesPage";
+import DefaultLayout from "@/components/layout/DefaultLayout";
 
 export default function Articles() {
   const router = useRouter();
@@ -53,9 +54,11 @@ export default function Articles() {
         <meta name="twitter:description" content="مطالعات علمی، پژوهش‌ها و مقالات آموزشی دبستان شهید جهان آرا. مجموعه‌ای ارزشمند از مطالب آموزشی برای معلمان، دانش‌آموزان و والدین جهت ارتقای دانش و یادگیری." />
         <meta name="twitter:image" content="https://jahanaraschool.ir/images/articles/articles-tumbnail.png" />
       </Head>
+      <DefaultLayout>
       <main className="page-padding-tops pb-4" style={{ minHeight: "100vh" }}>
         <ArticlesPage />
       </main>
+      </DefaultLayout>
     </>
   );
 }
