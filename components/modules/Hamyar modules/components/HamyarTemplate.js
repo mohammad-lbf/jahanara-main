@@ -127,26 +127,27 @@ const AboutDeveloperSection = () => (
         </p>
         <div className="text-center text-lg-end">
           <Link
-            href="/hamyar/about-developer"
-            className="btn btn-success"
-            style={{
-              backgroundColor: "#059212",
-              fontFamily: "KalamehWeb-Bold",
-              fontSize: "14px",
-            }}
-          >
-            مشاهده اطلاعات بیشتر
-          </Link>
+          href="/hamyar/about-developer"
+          className="mt-3 btn-main-2 text-white d-flex align-items-center"
+          style={{ width: "fit-content" }}
+          aria-label="درباره محمد لبافی توسعه دهنده سامانه همیار دبستان شهید جهان آرا"
+        >
+          <span style={{ fontFamily: "KalamehWeb-Bold" }}>
+            اطلاعات بیشتر درباره توسعه دهنده
+          </span>
+          <i className="bi bi-chevron-double-left me-2 pt-2 animated-icon"></i>
+        </Link>
         </div>
       </div>
       <div className="col-12 col-lg-5 text-center mt-4 mt-lg-0">
-        <Image
-          src="/images/20220719_222926.jpg"
-          alt="محمد لبافی"
-          width={180}
-          height={180}
-          style={{ borderRadius: "50%" }}
-        />
+              <Image
+                src="/images/20220719_222926.jpg"
+                alt="محمد لبافی"
+                width={1280}
+                height={1280}
+                className="shadow border"
+                style={{ borderRadius: "50%" , width:"160px" , height:"160px" }}
+              />
       </div>
     </div>
   </div>
@@ -156,22 +157,22 @@ const HamyarTemplate = () => {
   const baseCards = [
     {
       title: "پایه سوم",
-      href: "/sevom",
+      href: "/hamyar/sevom",
       image: "/images/components/modules/number-3.png",
     },
     {
       title: "پایه چهارم",
-      href: "/chaharom",
+      href: "/hamyar/chaharom",
       image: "/images/components/modules/number-4.png",
     },
     {
       title: "پایه پنجم",
-      href: "/panjom",
+      href: "/hamyar/panjom",
       image: "/images/components/modules/number-5.png",
     },
     {
       title: "پایه ششم",
-      href: "/sheshom",
+      href: "/hamyar/sheshom",
       image: "/images/components/modules/number-6.png",
     },
   ];
@@ -179,22 +180,22 @@ const HamyarTemplate = () => {
   const booksCards = [
     {
       title: "کتابهای درسی پایه سوم",
-      href: "/sevom/books",
+      href: "/hamyar/sevom/books",
       image: "/images/components/modules/number-3.png",
     },
     {
       title: "کتابهای درسی پایه چهارم",
-      href: "/chaharom/books",
+      href: "/hamyar/chaharom/books",
       image: "/images/components/modules/number-4.png",
     },
     {
       title: "کتابهای درسی پایه پنجم",
-      href: "/panjom/books",
+      href: "/hamyar/panjom/books",
       image: "/images/components/modules/number-5.png",
     },
     {
       title: "کتابهای درسی پایه ششم",
-      href: "/sheshom/books",
+      href: "/hamyar/sheshom/books",
       image: "/images/components/modules/number-6.png",
     },
   ];

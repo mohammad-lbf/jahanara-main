@@ -78,9 +78,10 @@ const AboutDeveloper = () => {
               <Image
                 src="/images/20220719_222926.jpg"
                 alt="محمد لبافی"
-                width={160}
-                height={160}
-                style={{ borderRadius: "50%" }}
+                width={1280}
+                height={1280}
+                className="shadow border"
+                style={{ borderRadius: "50%" , width:"160px" , height:"160px" }}
               />
             </div>
 
@@ -127,7 +128,7 @@ const AboutDeveloper = () => {
               }}
               className="text-end mt-3 mb-2"
             >
-              من محمد لبافی هستم؛ آموزگار، طراح، برنامه‌نویس و توسعه‌دهنده ارشد وب (Senior MERN Stack Developer). بیش از چندین سال است در حوزه طراحی و توسعه وب و سامانه‌های آموزشی فعالیت می‌کنم و تجربه همکاری در پروژه‌های مختلف آموزشی و فناوری را دارم.
+              من محمد لبافی هستم؛ آموزگار، طراح، برنامه‌نویس و توسعه‌دهنده ارشد وب (Senior MERN Stack Developer).  چند سالی است در حوزه طراحی و توسعه وب و سامانه‌های آموزشی فعالیت می‌کنم و تجربه همکاری در پروژه‌های مختلف آموزشی و فناوری را دارم.
             </p>
 
             <p

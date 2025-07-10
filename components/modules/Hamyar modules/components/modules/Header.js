@@ -64,7 +64,7 @@ const Header = () => {
                       <li>
                         <Link className="text-end" href="/hamyar/sheshom">
                           <span style={linkStyle}>پایه ششم</span>
-                        </Link>hamyar/
+                        </Link>
                       </li>
                     </ul>
                   </li>

@@ -3,6 +3,7 @@ import React from "react";
 import ArticlePage from "../../components/templates/ArticlePage";
 import { useRouter } from "next/router";
 import articles from "../../DB/articles/index";
+import DefaultLayout from "@/components/layout/DefaultLayout";
 
 const Article = () => {
   const router = useRouter();
@@ -56,8 +57,9 @@ const Article = () => {
           <meta name="keywords" content={currentArticle.mainTitle} />
         )}
       </Head>
-
-      <ArticlePage articles={articles} article={currentArticle} />
+        <DefaultLayout>
+            <ArticlePage articles={articles} article={currentArticle} />
+        </DefaultLayout>
     </div>
   );
 };

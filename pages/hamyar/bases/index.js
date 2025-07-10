@@ -39,7 +39,7 @@ const Bases = () => {
         />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="دبستان شهید جهان آرا" />
-        <meta property="og:image" content="https://jahanaraschool.ir/images/og-image.jpg" />
+        <meta property="og:image" content="https://jahanaraschool.ir/images/hamyar/og-image.jpg" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -51,7 +51,7 @@ const Bases = () => {
           name="twitter:description"
           content="در سامانه همیار معلم دبستان شهید جهان‌آرا، به ابزارها، محتوای آموزشی و منابع پایه‌های تحصیلی سوم، چهارم، پنجم و ششم دسترسی پیدا کنید. روی پایه موردنظر کلیک کنید و مسیر آموزش خود را آسان‌تر کنید."
         />
-        <meta name="twitter:image" content="https://jahanaraschool.ir/images/og-image.jpg" />
+        <meta name="twitter:image" content="https://jahanaraschool.ir/images/hamyar/og-image.jpg" />
       </Head>
 
       <HamyarLayout>
@@ -72,9 +72,10 @@ const Bases = () => {
                     fontSize: "25px",
                     fontFamily: "KalamehWeb-Bold",
                     color: "#03004e",
+                    lineHeight:"40px"
                   }}
                 >
-                  پایه های تحصیلی
+                 پایه های تحصیلی | سامانه همیار دبستان شهید جهان آرا
                 </h2>
                 <p
                   className="mt-3 mb-4 mb-lg-0 text-center text-lg-end"
@@ -91,7 +92,7 @@ const Bases = () => {
               <div className="col-12 col-lg-5 text-center text-lg-start">
                 <Image
                   style={{ width: "100px", height: "100px" }}
-                  src={"/images/components/modules/bases.png"}
+                  src={"/images/hamyar/components/modules/bases.png"}
                   height={512}
                   width={512}
                   alt="پایه های تحصیلی"
@@ -109,11 +110,11 @@ const Bases = () => {
                   <Link
                     className="py-3 text-center"
                     style={{ width: "300px", height: "185px" }}
-                    href={"/sevom"}
+                    href={"/hamyar/sevom"}
                   >
                     <Image
                       style={{ width: "100px", height: "100px" }}
-                      src={"/images/components/modules/number-3.png"}
+                      src={"/images/hamyar/components/modules/number-3.png"}
                       width={512}
                       height={512}
                       alt="پایه سوم"
@@ -139,11 +140,11 @@ const Bases = () => {
                   <Link
                     className="py-3 text-center"
                     style={{ width: "300px", height: "185px" }}
-                    href={"/chaharom"}
+                    href={"/hamyar/chaharom"}
                   >
                     <Image
                       style={{ width: "100px", height: "100px" }}
-                      src={"/images/components/modules/number-4.png"}
+                      src={"/images/hamyar/components/modules/number-4.png"}
                       width={512}
                       height={512}
                       alt="پایه چهارم"
@@ -169,11 +170,11 @@ const Bases = () => {
                   <Link
                     className="py-3 text-center"
                     style={{ width: "300px", height: "185px" }}
-                    href={"/panjom"}
+                    href={"/hamyar/panjom"}
                   >
                     <Image
                       style={{ width: "100px", height: "100px" }}
-                      src={"/images/components/modules/number-5.png"}
+                      src={"/images/hamyar/components/modules/number-5.png"}
                       width={512}
                       height={512}
                       alt="پایه پنجم"
@@ -199,11 +200,11 @@ const Bases = () => {
                   <Link
                     className="py-3 text-center"
                     style={{ width: "300px", height: "185px" }}
-                    href={"/sheshom"}
+                    href={"/hamyar/sheshom"}
                   >
                     <Image
                       style={{ width: "100px", height: "100px" }}
-                      src={"/images/components/modules/number-6.png"}
+                      src={"/images/hamyar/components/modules/number-6.png"}
                       width={512}
                       height={512}
                       alt="پایه ششم"

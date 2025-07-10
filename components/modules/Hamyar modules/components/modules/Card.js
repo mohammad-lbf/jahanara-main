@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Card = ({name , creator , caption, slug , image , fileType}) => {
     return (
-            <div style={{width:"280px" , position:"relative" , height:"390px" , overflow:"hidden"}} className='lbf-card border-gray-800 bg-white mb-3'>
+            <div style={{width:"280px" , position:"relative" , height:"410px" , overflow:"hidden"}} className='lbf-card border-gray-800 bg-white mb-3'>
             <div className='lbf-card-image-article text-center'>
                 <Image
                 style={{width:"80px" , height:"120px"}}
@@ -15,11 +15,11 @@ const Card = ({name , creator , caption, slug , image , fileType}) => {
             <div className='p-relative'>
                 <div style={{width:"100px"}} className="lbf-after-card-img"></div>
                 <div className='lbf-card-desc pt-1'>
-                    <h2 style={{height:"50px" , fontFamily:"KalamehWeb-Bold" , fontSize:"17px" , color:"#090736"}} className="mb-3 text-center">{name}</h2>
-                    <div className='' style={{height:"60px"}}>
-                    <p className='text-center mb-0'>{caption}</p>
+                    <h2 style={{height:"70px" , fontFamily:"KalamehWeb-Bold" , fontSize:"16px" ,lineHeight:"25px" , color:"#090736"}} className="mb-3 text-center">{name}</h2>
+                    <div className='' style={{height:"65px"}}>
+                    <p className='text-center mb-0' style={{fontSize:"15px"}}>{caption}</p>
                     </div>
-                    <div className="mb-1 d-flex justify-content-center">
+                    <div className="mb-1 mt-2 d-flex justify-content-center">
                     <i className="bi bi-pen-fill ms-1 text-black"></i>
                     <p style={{fontFamily:"KalamehWeb-Medium" , color:"#000"}}>طراح:{creator}</p>
                     </div>
