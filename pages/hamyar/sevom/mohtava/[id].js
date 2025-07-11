@@ -1,19 +1,79 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+import React from 'react'
+import Head from 'next/head'
 import data from '@/DB/Hamyar DB/sevom/mohtava';
 import Image from 'next/image';
 import Link from 'next/link';
 import Card from '@/components/modules/Hamyar modules/components/modules/Card';
 import HamyarLayout from '@/components/layout/HamyarLayout';
 
-const Page = () => {
-    const router = useRouter();
-    const { id } = router.query;
-    const currentFileData = data.find(item => item.id == id);
-    console.log(id)
-    return (
-<HamyarLayout>
-<div style={{minHeight:"100vh"}} className='page-padding-tops'>
+export async function getStaticPaths() {
+  const paths = data.map(item => ({
+    params: { id: item.id.toString() }
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const currentFileData = data.find(item => item.id.toString() === params.id);
+
+  return {
+    props: {
+      currentFileData,
+      data,
+    }
+  }
+}
+
+const Page = ({ currentFileData, data }) => {
+
+  // ساخت متغیرهای سئو
+  const pageTitle = `${currentFileData.name} | طراح: ${currentFileData.creator} | سامانه همیار دبستان شهید جهان آرا`;
+  const pageDescription = `دانلود ${currentFileData.name} طراحی شده توسط ${currentFileData.creator} در سامانه همیار دبستان شهید جهان آرا. ${currentFileData.caption}`;
+  const pageKeywords = `محتوای آموزشی, محتوای آموزشی پایه سوم, دبستان شهید جهان آرا, ${currentFileData.name}`;
+  const canonicalUrl = `https://jahanaraschool.ir/hamyar/sevom/mohtava/${currentFileData.id}`;
+
+  return (
+    <HamyarLayout>
+      <Head>
+        {/* Title */}
+        <title>{pageTitle}</title>
+
+        {/* Meta Description */}
+        <meta name="description" content={pageDescription} />
+
+        {/* Author */}
+        <meta name="author" content={currentFileData.creator} />
+        
+        <meta name="robots" content="index, follow" />
+
+        {/* Keywords */}
+        <meta name="keywords" content={pageKeywords} />
+
+        {/* Viewport */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Canonical */}
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="fa_IR" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:site_name" content="سامانه همیار دبستان شهید جهان آرا" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+      </Head>
+
+        <div style={{minHeight:"100vh"}} className='page-padding-tops'>
             <div style={{paddingTop:"20px" , paddingBottom:"20px"}} className='mt-5 mt-lg-2 container bg-white rounded shadow-sm border'>
                 <div className='d-flex'>
                 <Link href={"/hamyar"} style={{fontFamily:"KalamehWeb-Bold"}}>
@@ -74,7 +134,15 @@ const Page = () => {
                                                 <p style={{fontFamily:"KalamehWeb-Medium" , color:"#000"}}>بروزرسانی شده در:{currentFileData.upoledDate}</p>
                                             </div>
 
-                                            <a  download={true} className='mt-3 btn-main-2 2 text-center d-inline-block text-white w-100' style={{borderRadius:"0" , fontFamily:"KalamehWeb-Bold"}} href={`${currentFileData.src}`}>دریافت فایل</a>
+                                            <a
+                                                download={true}
+                                                className='mt-3 btn-main-2 text-center d-inline-block text-white w-100 d-flex justify-content-center align-items-center'
+                                                style={{borderRadius:"0", fontFamily:"KalamehWeb-Bold"}}
+                                                href={`${currentFileData.src}`}
+                                              >
+                                                دریافت فایل
+                                                <i className="bi bi-download me-2 fs-5"></i>
+                                            </a>
                                 </div>
                                 {
                                     currentFileData.fileType == "video" && 
@@ -91,7 +159,7 @@ const Page = () => {
             <div className='container'>
                 <div style={{ paddingTop:"20px" , paddingBottom:"20px"}} className='mb-3 container bg-white rounded text-center shadow-sm border'>
                 <h2 style={{fontFamily:"KalamehWeb-Bold" , fontSize:"17px"}} className="text-center">
-                آخرین محتوای آموزشی پایه سوم
+                آخرین محتوا های آموزشی پایه سوم
                 </h2>
                 </div>
                         <div className='row justify-content-center align-items-center'>
@@ -109,8 +177,9 @@ const Page = () => {
                 </>
             }
         </div>
-</HamyarLayout>
-    );
-};
+
+    </HamyarLayout>
+  )
+}
 
 export default Page;

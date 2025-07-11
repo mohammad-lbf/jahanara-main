@@ -32,6 +32,11 @@
     cursor: pointer;
     transition: border-color 0.3s, box-shadow 0.3s;
   }
+
+  .selectBox option{
+    font-size: 14px;
+    font-weight: 800;
+  }
   
   .selectBox:hover {
     border-color: #007bff;

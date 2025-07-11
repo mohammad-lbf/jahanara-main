@@ -21,15 +21,8 @@ const Card = ({name , creator , caption, slug , image , fileType}) => {
                     </div>
                     <div className="mb-1 mt-2 d-flex justify-content-center">
                     <i className="bi bi-pen-fill ms-1 text-black"></i>
-                    <p style={{fontFamily:"KalamehWeb-Medium" , color:"#000"}}>طراح:{creator}</p>
+                    <p style={{fontFamily:"KalamehWeb-Medium" , color:"#000" , fontSize:"14px"}}>طراح:{creator}</p>
                     </div>
-                    {/* <div className='d-flex justify-content-center mt-3'>
-                    
-                    {fileType == "PDF" && <i class="bi bi-filetype-pdf text-danger fs-5"></i>}
-                    {fileType == "WORD" && <i class="bi bi-file-earmark-word-fill text-danger fs-5"></i>}
-                    </div> */}
-                    {/* <div className="lh-lg text-end" style={{fontFamily:"KalamehWeb-Medium" , height:"80px" , fontSize:"12px" , color:"#000"}} dangerouslySetInnerHTML={{ __html: caption.replace(/\n/g, '<br />') }}>
-                    </div> */}
                 </div>
             </div>
             <Link className='btn-main-2 2 text-center d-inline-block text-white w-100' style={{position:"absolute" , bottom:"0" , borderRadius:"0" , fontFamily:"KalamehWeb-Bold"}} href={`${slug}`}>مشاهده و دریافت</Link>

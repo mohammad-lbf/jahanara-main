@@ -34,7 +34,7 @@ const SectionTitle = ({ title, description }) => (
         {title.includes("پایه") ? (
           <Image
             style={{ width: "100px", height: "100px" }}
-            src={"/images/components/modules/bases.png"}
+            src={"/images/hamyar/components/modules/bases.png"}
             width={512}
             height={512}
             alt="bases"
@@ -42,7 +42,7 @@ const SectionTitle = ({ title, description }) => (
         ) : (
           <Image
             style={{ width: "100px", height: "100px" }}
-            src={"/images/components/modules/books.png"}
+            src={"/images/hamyar/components/modules/books.png"}
             width={512}
             height={512}
             alt="books"
@@ -158,22 +158,22 @@ const HamyarTemplate = () => {
     {
       title: "پایه سوم",
       href: "/hamyar/sevom",
-      image: "/images/components/modules/number-3.png",
+      image: "/images/hamyar/components/modules/number-3.png",
     },
     {
       title: "پایه چهارم",
       href: "/hamyar/chaharom",
-      image: "/images/components/modules/number-4.png",
+      image: "/images/hamyar/components/modules/number-4.png",
     },
     {
       title: "پایه پنجم",
       href: "/hamyar/panjom",
-      image: "/images/components/modules/number-5.png",
+      image: "/images/hamyar/components/modules/number-5.png",
     },
     {
       title: "پایه ششم",
       href: "/hamyar/sheshom",
-      image: "/images/components/modules/number-6.png",
+      image: "/images/hamyar/components/modules/number-6.png",
     },
   ];
 
@@ -181,22 +181,22 @@ const HamyarTemplate = () => {
     {
       title: "کتابهای درسی پایه سوم",
       href: "/hamyar/sevom/books",
-      image: "/images/components/modules/number-3.png",
+      image: "/images/hamyar/components/modules/number-3.png",
     },
     {
       title: "کتابهای درسی پایه چهارم",
       href: "/hamyar/chaharom/books",
-      image: "/images/components/modules/number-4.png",
+      image: "/images/hamyar/components/modules/number-4.png",
     },
     {
       title: "کتابهای درسی پایه پنجم",
       href: "/hamyar/panjom/books",
-      image: "/images/components/modules/number-5.png",
+      image: "/images/hamyar/components/modules/number-5.png",
     },
     {
       title: "کتابهای درسی پایه ششم",
       href: "/hamyar/sheshom/books",
-      image: "/images/components/modules/number-6.png",
+      image: "/images/hamyar/components/modules/number-6.png",
     },
   ];
 

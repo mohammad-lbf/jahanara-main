@@ -3,7 +3,7 @@ const data = [
         id:60041,
         name:"درسنامه فصل 2 کسر ریاضی ششم",
         caption:"درسنامه فصل 2 کسر ریاضی - پایه ششم دبستان",
-        creator:"جناب آقای لبافی",
+        creator:"جناب آقای محمد لبافی",
         upoledDate:"1403/08/20",
         fileType:"PDF",
         src:"/Files/hamyar/sheshom/darsnameh/درسنامه-فصل-2-کسر-ریاضی-(سری4)-ششم-دبستان.pdf",

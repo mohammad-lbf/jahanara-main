@@ -4,6 +4,10 @@ import data from '@/DB/Hamyar DB/panjom/mohtava';
 import Card from '@/components/modules/Hamyar modules/components/modules/Card';
 import styles from '../../../../styles/filterselect.module.css';
 import HamyarLayout from '@/components/layout/HamyarLayout';
+import toPersianNumber from '@/assets/functions/ToPersianNumber';
+import CountByBook from '@/components/modules/Hamyar modules/components/modules/CountByBook';
+import CountByCreator from '@/components/modules/Hamyar modules/components/modules/CountByCreator';
+
 
 const Soalat = () => {
   const reverseData = [...data].reverse();
@@ -51,70 +55,59 @@ const Soalat = () => {
   });
   };
 
-  // شمارش موارد برای هر گزینه
-  const countByBook = data.reduce((acc, item) => {
-    acc[item.book] = (acc[item.book] || 0) + 1;
-    return acc;
-  }, {});
-
-  const countByCreator = data.reduce((acc, item) => {
-    acc[item.creator] = (acc[item.creator] || 0) + 1;
-    return acc;
-  }, {});
 
   // ساخت ناوبری صفحه
   const renderPagination = () => (
     <div className='container'>
       <div className='row justify-content-center flex-column align-items-center'>
-      <div className=' text-center bg-white p-3 rounded border mb-3' style={{width:"fit-content"}}> 
-     حداکثر تعداد نمایش در هر صفحه: 10
-      <nav aria-label="" className='mt-2'>
-      <ul className="pagination justify-content-center">
-        <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-          <a
-            className="page-link"
-            href="#"
-            aria-label="Previous"
-            onClick={(e) => {
-              e.preventDefault();
-              if (currentPage > 1) handlePageChange(currentPage - 1);
-            }}
-          >
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        {Array.from({ length: totalPages }, (_, i) => (
-          <li key={i + 1} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
-            <a
-              className="page-link mb-1"
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                handlePageChange(i + 1);
-              }}
-            >
-              {i + 1}
-            </a>
-          </li>
-        ))}
-        <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-          <a
-            className="page-link"
-            href="#"
-            aria-label="Next"
-            onClick={(e) => {
-              e.preventDefault();
-              if (currentPage < totalPages) handlePageChange(currentPage + 1);
-            }}
-          >
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+        <div className='text-center bg-white p-3 rounded border mb-3' style={{ width: "fit-content" }}>
+          حداکثر تعداد نمایش در هر صفحه: {toPersianNumber(itemsPerPage)}
+          <nav aria-label="" className='mt-2'>
+            <ul className="pagination justify-content-center">
+              <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+                <a
+                  className="page-link"
+                  href="#"
+                  aria-label="Previous"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (currentPage > 1) handlePageChange(currentPage - 1);
+                  }}
+                >
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              {Array.from({ length: totalPages }, (_, i) => (
+                <li key={i + 1} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
+                  <a
+                    className="page-link mb-1"
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handlePageChange(i + 1);
+                    }}
+                  >
+                    {toPersianNumber(i + 1)}
+                  </a>
+                </li>
+              ))}
+              <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+                <a
+                  className="page-link"
+                  href="#"
+                  aria-label="Next"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (currentPage < totalPages) handlePageChange(currentPage + 1);
+                  }}
+                >
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-      </div>
-
     </div>
   );
 
@@ -129,7 +122,7 @@ const Soalat = () => {
             </h2>
           </div>
           <div className="col-12 col-lg-5 text-center text-lg-start">
-            <Image className="mt-3 mt-lg-0" style={{ width: "50px", height: "50px" }} src={"/images/components/modules/number-5.png"} height={512} width={512} />
+            <Image className="mt-3 mt-lg-0" style={{ width: "50px", height: "50px" }} src={"/images/hamyar/components/modules/number-5.png"} height={512} width={512} />
           </div>
         </div>
       </div>
@@ -141,20 +134,7 @@ const Soalat = () => {
                 <label style={{ fontFamily: "KalamehWeb-Bold" }} htmlFor="filter" className={styles.label}>
                   انتخاب درس:
                 </label>
-                <select
-                  id="filter"
-                  className={styles.selectBox}
-                  value={selectedOption}
-                  onChange={handleChange}
-                >
-                  <option value="all">همه دروس ({data.length})</option>
-                  <option value="quran">آموزش قرآن ({countByBook.quran || 0})</option>
-                  <option value="riazi">ریاضی ({countByBook.riazi || 0})</option>
-                  <option value="oloom">علوم ({countByBook.oloom || 0})</option>
-                  <option value="farsi">فارسی ({countByBook.farsi || 0})</option>
-                  <option value="hedye">هدیه های آسمان ({countByBook.hedye || 0})</option>
-                  <option value="motaleat">مطالعات اجتماعی ({countByBook.motaleat || 0})</option>
-                </select>
+                    <CountByBook data={data} handleChange={handleChange} selectedOption={selectedOption} />
               </div>
             </div>
           </div>
@@ -164,19 +144,7 @@ const Soalat = () => {
                 <label style={{ fontFamily: "KalamehWeb-Bold" }} htmlFor="creator-filter" className={styles.label}>
                   انتخاب طراح:
                 </label>
-                <select
-                  id="creator-filter"
-                  className={styles.selectBox}
-                  value={selectedCreator}
-                  onChange={handleCreatorChange}
-                >
-                  <option value="all">همه طراحان ({data.length})</option>
-                  <option value="سرکار خانم باقریان">سرکار خانم باقریان ({countByCreator["سرکار خانم باقریان"] || 0})</option>
-                  <option value="جناب آقای نوری">جناب آقای نوری ({countByCreator["جناب آقای نوری"] || 0})</option>
-                  <option value="جناب آقای علمداری">جناب آقای علمداری ({countByCreator["جناب آقای علمداری"] || 0})</option>
-                  <option value="جناب آقای ابراهیم پور">جناب آقای ابراهیم پور ({countByCreator["جناب آقای ابراهیم پور"] || 0})</option>
-                  <option value="جناب آقای لبافی">جناب آقای لبافی ({countByCreator["جناب آقای لبافی"] || 0})</option>
-                </select>
+                  <CountByCreator data={data} handleChange={handleCreatorChange} selectedCreator={selectedCreator} />
               </div>
             </div>
           </div>
