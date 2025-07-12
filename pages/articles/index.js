@@ -49,7 +49,7 @@ export default function Articles() {
         <meta property="og:image" content="https://jahanaraschool.ir/images/articles/articles-tumbnail.png" />
 
         {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta name="twitter:title" content="مقالات آموزشی دبستان شهید جهان آرا | jahanaraschool.ir" />
         <meta name="twitter:description" content="مطالعات علمی، پژوهش‌ها و مقالات آموزشی دبستان شهید جهان آرا. مجموعه‌ای ارزشمند از مطالب آموزشی برای معلمان، دانش‌آموزان و والدین جهت ارتقای دانش و یادگیری." />
         <meta name="twitter:image" content="https://jahanaraschool.ir/images/articles/articles-tumbnail.png" />

@@ -45,7 +45,7 @@ const Article = () => {
         )}
 
         {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
         {ogImage && (

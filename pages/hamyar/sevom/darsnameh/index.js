@@ -126,7 +126,7 @@ const Darsnameh = () => {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="دبستان شهید جهان آرا" />
         {/* <meta property="og:image" content="https://jahanaraschool.ir/images/og-image.jpg" /> */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta name="twitter:title" content="درسنامه‌های آموزشی پایه سوم | سامانه همیار دبستان شهید جهان آرا" />
         <meta name="twitter:description" content="بانک کامل درسنامه‌های آموزشی پایه سوم دبستان شهید جهان‌آرا با امکان فیلتر بر اساس درس یا طراح. محتوای آموزشی باکیفیت ویژه معلمان و دانش‌آموزان." />
         {/* <meta name="twitter:image" content="https://jahanaraschool.ir/images/og-image.jpg" /> */}

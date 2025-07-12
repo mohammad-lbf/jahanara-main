@@ -56,7 +56,7 @@ const AboutSchool = () => {
         />
 
         {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta
           name="twitter:title"
           content="درباره دبستان شهید جهان‌آرا | jahanaraschool.ir"

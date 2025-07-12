@@ -68,7 +68,7 @@ const Page = ({ currentFileData, data }) => {
         <meta property="og:site_name" content="سامانه همیار دبستان شهید جهان آرا" />
 
         {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
       </Head>

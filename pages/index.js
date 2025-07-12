@@ -49,7 +49,7 @@ export default function Home() {
         <meta property="og:image" content="https://jahanaraschool.ir/images/og-image.jpg" />
 
         {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta name="twitter:title" content="دبستان دولتی پسرانه شهید جهان آرا | jahanaraschool.ir" />
         <meta name="twitter:description" content="دبستان شهید جهان‌آرا یکی از مدارس برجسته و فعال در منطقه ۱۲ تهران است که با فراهم آوردن محیطی امن و دوستانه، نقش مهمی در ارتقای کیفیت آموزش ابتدایی ایفا می‌کند." />
         <meta name="twitter:image" content="https://jahanaraschool.ir/images/og-image.jpg" />

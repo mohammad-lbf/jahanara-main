@@ -42,7 +42,7 @@ const Bases = () => {
         <meta property="og:image" content="https://jahanaraschool.ir/images/hamyar/og-image.jpg" />
 
         {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta
           name="twitter:title"
           content="پایه‌های تحصیلی | سامانه همیار معلم دبستان شهید جهان‌آرا | jahanaraschool.ir"

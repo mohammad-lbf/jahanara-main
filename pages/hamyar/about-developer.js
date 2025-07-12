@@ -44,7 +44,7 @@ const AboutDeveloper = () => {
         />
 
         {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta
           name="twitter:title"
           content="درباره توسعه‌دهنده سامانه همیار معلم | محمد لبافی | jahanaraschool.ir"

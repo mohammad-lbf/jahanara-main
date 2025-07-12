@@ -128,7 +128,7 @@ const Soalat = () => {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="دبستان شهید جهان آرا" />
         {/* <meta property="og:image" content="https://jahanaraschool.ir/images/og-image.jpg" /> */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta name="twitter:title" content="نمونه سوالات پایه سوم | سامانه همیار دبستان شهید جهان آرا" />
         <meta name="twitter:description" content="بانک کامل نمونه سوالات پایه سوم دبستان شهید جهان‌آرا با امکان فیلتر بر اساس درس یا طراح سوال." />
         {/* <meta name="twitter:image" content="https://jahanaraschool.ir/images/og-image.jpg" /> */}

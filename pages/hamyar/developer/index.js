@@ -42,7 +42,7 @@ export default function Home() {
         />
 
         {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta
           name="twitter:title"
           content="مستندات فنی سامانه همیار معلم دبستان شهید جهان‌آرا | jahanaraschool.ir"

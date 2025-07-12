@@ -126,7 +126,7 @@ const Mohtava = () => {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="دبستان شهید جهان آرا" />
         <meta property="og:image" content="https://jahanaraschool.ir/images/og-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta name="twitter:title" content="محتواهای آموزشی پایه سوم | سامانه همیار دبستان شهید جهان آرا" />
         <meta name="twitter:description" content="بانک محتوای آموزشی پایه سوم دبستان شهید جهان‌آرا شامل جزوه‌ها، فایل‌های کمک درسی و محتوای متنوع برای معلمان و دانش‌آموزان. فیلتر بر اساس درس یا طراح." />
         <meta name="twitter:image" content="https://jahanaraschool.ir/images/og-image.jpg" />

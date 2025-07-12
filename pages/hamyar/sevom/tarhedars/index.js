@@ -126,7 +126,7 @@ const Soalat = () => {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="دبستان شهید جهان آرا" />
         <meta property="og:image" content="https://jahanaraschool.ir/images/og-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta name="twitter:title" content="طرح درس های پایه سوم | سامانه همیار دبستان شهید جهان آرا" />
         <meta name="twitter:description" content="طرح درس‌های پایه سوم دبستان شهید جهان‌آرا شامل فایل‌های کمک‌درسی، برنامه‌ریزی درسی و جزئیات آموزش برای معلمان و دانش‌آموزان. امکان فیلتر بر اساس درس یا طراح." />
         <meta name="twitter:image" content="https://jahanaraschool.ir/images/og-image.jpg" />
