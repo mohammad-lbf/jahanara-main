@@ -2,15 +2,23 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import data from '@/DB/Hamyar DB/sevom/darsnameh/index';
 import Card from '@/components/modules/Hamyar modules/components/modules/Card';
 import styles from '../../../../styles/filterselect.module.css';
 import HamyarLayout from '@/components/layout/HamyarLayout';
-import toPersianNumber from '@/assets/functions/ToPersianNumber';
 import CountByBook from '@/components/modules/Hamyar modules/components/modules/CountByBook';
 import CountByCreator from '@/components/modules/Hamyar modules/components/modules/CountByCreator';
+import Pagination from '@/components/modules/Hamyar modules/components/modules/Pagination';
 
-const Darsnameh = () => {
+export async function getStaticProps() {
+  const data = await import('@/DB/Hamyar DB/sevom/darsnameh/index');
+  return {
+    props: {
+      data: data.default,
+    },
+  };
+}
+
+const Darsnameh = ({ data }) => {
   const router = useRouter();
   const canonicalUrl = `https://jahanaraschool.ir${router.asPath === "/" ? "" : router.asPath}`;
 
@@ -41,8 +49,6 @@ const Darsnameh = () => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentData = filteredData.slice(startIndex, startIndex + itemsPerPage);
 
-  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-
   const handlePageChange = (page) => {
     setCurrentPage(page);
     window.scrollTo({
@@ -50,60 +56,6 @@ const Darsnameh = () => {
       behavior: 'smooth',
     });
   };
-
-  const renderPagination = () => (
-    <div className='container'>
-      <div className='row justify-content-center flex-column align-items-center'>
-        <div className='text-center bg-white p-3 rounded border mb-3' style={{ width: "fit-content" }}>
-          حداکثر تعداد نمایش در هر صفحه: {toPersianNumber(itemsPerPage)}
-          <nav aria-label="" className='mt-2'>
-            <ul className="pagination justify-content-center">
-              <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                <a
-                  className="page-link"
-                  href="#"
-                  aria-label="Previous"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (currentPage > 1) handlePageChange(currentPage - 1);
-                  }}
-                >
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              {Array.from({ length: totalPages }, (_, i) => (
-                <li key={i + 1} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
-                  <a
-                    className="page-link mb-1"
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handlePageChange(i + 1);
-                    }}
-                  >
-                    {toPersianNumber(i + 1)}
-                  </a>
-                </li>
-              ))}
-              <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-                <a
-                  className="page-link"
-                  href="#"
-                  aria-label="Next"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (currentPage < totalPages) handlePageChange(currentPage + 1);
-                  }}
-                >
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  );
 
   return (
     <HamyarLayout>
@@ -113,7 +65,7 @@ const Darsnameh = () => {
           name="description"
           content="بانک کامل درسنامه‌های آموزشی پایه سوم دبستان شهید جهان‌آرا با امکان فیلتر بر اساس درس یا طراح. محتوای آموزشی باکیفیت ویژه معلمان و دانش‌آموزان."
         />
-        <meta name="keywords" content="درسنامه سوم دبستان, درسنامه آموزشی, دبستان شهید جهان آرا, محتوای آموزشی سوم, همیار معلم" />
+        <meta name="keywords" content="درسنامه سوم دبستان, درسنامه آموزشی, دبستان شهید جهان آرا, محتوای آموزشی سوم, همیار" />
         <meta name="author" content="محمد لبافی" />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -125,11 +77,9 @@ const Darsnameh = () => {
         <meta property="og:description" content="بانک کامل درسنامه‌های آموزشی پایه سوم دبستان شهید جهان‌آرا با امکان فیلتر بر اساس درس یا طراح. محتوای آموزشی باکیفیت ویژه معلمان و دانش‌آموزان." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="دبستان شهید جهان آرا" />
-        {/* <meta property="og:image" content="https://jahanaraschool.ir/images/og-image.jpg" /> */}
-        {/* <meta name="twitter:card" content="summary_large_image" /> */}
+
         <meta name="twitter:title" content="درسنامه‌های آموزشی پایه سوم | سامانه همیار دبستان شهید جهان آرا" />
         <meta name="twitter:description" content="بانک کامل درسنامه‌های آموزشی پایه سوم دبستان شهید جهان‌آرا با امکان فیلتر بر اساس درس یا طراح. محتوای آموزشی باکیفیت ویژه معلمان و دانش‌آموزان." />
-        {/* <meta name="twitter:image" content="https://jahanaraschool.ir/images/og-image.jpg" /> */}
       </Head>
 
       <div style={{ minHeight: "100vh" }} className="page-padding-tops">
@@ -177,17 +127,36 @@ const Darsnameh = () => {
           </div>
         ) : (
           <>
-            {renderPagination()}
+            <Pagination
+              totalItems={filteredData.length}
+              itemsPerPage={itemsPerPage}
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+            />
+
             <div className="container">
               <div className="row justify-content-center align-items-center">
                 {currentData.map((item) => (
                   <div key={item.id} className="col d-flex justify-content-center">
-                    <Card caption={item.caption} fileType={item.fileType} name={item.name} image={item.image} creator={item.creator} slug={item.slug} />
+                    <Card
+                      caption={item.caption}
+                      fileType={item.fileType}
+                      name={item.name}
+                      image={item.image}
+                      creator={item.creator}
+                      slug={item.slug}
+                    />
                   </div>
                 ))}
               </div>
             </div>
-            {renderPagination()}
+
+            <Pagination
+              totalItems={filteredData.length}
+              itemsPerPage={itemsPerPage}
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+            />
           </>
         )}
       </div>

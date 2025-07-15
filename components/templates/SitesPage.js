@@ -1,6 +1,7 @@
 import React from 'react';
 import FirstBanner from '../modules/Sites Page/FirstBanner';
 import SitesSection from '../modules/HomePage/SitesSection';
+import UsefulLinks from '../modules/HomePage/UsefulLinks';
 
 const SitesPage = () => {
     return (
@@ -11,6 +12,7 @@ const SitesPage = () => {
                     <div className='col-12 col-lg-12 weblog__articles'>
                         <div className='col-12 text-center'>
                         <SitesSection />
+                        <UsefulLinks />
                         </div>
                     </div>
                     </div>

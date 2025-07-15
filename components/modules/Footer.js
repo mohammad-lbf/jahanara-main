@@ -24,6 +24,9 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="col-12 col-lg-4 text-center text-lg-end">
+                <p style={{fontFamily:"KalamehWeb-Medium" , fontSize:"14px"}} className={`lh-lg mt-3 mb-3 ${styles.textColorMilky}`}>
+                    <i className="bi bi-globe ms-1"></i>
+                    سایت دبستان: www.jahanaraschool.ir</p>
                 <p style={{fontFamily:"KalamehWeb-Medium" , fontSize:"14px"}} className={`lh-lg mt-3 mb-3 ${styles.textColorMilky}`} >
                 <i class="bi bi-geo-alt-fill"></i>  آدرس: میدان خراسان، خیابان خراسان، خیابان لرزاده، بعد از درمانگاه خیریه شهدای لرزاده، پلاک ۲۶
                             </p>

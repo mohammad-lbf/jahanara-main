@@ -61,10 +61,16 @@ const CardsGrid = ({ cards }) => (
           key={idx}
           className="col-12 col-md-6 col-xl-4 col-xxl-3 d-flex justify-content-center"
         >
-          <div
-            className="bg-white rounded border shadow-sm d-flex flex-column align-items-center mb-3"
-            style={{ width: "300px", height: "185px" }}
-          >
+<div
+  className="bg-white rounded border d-flex flex-column align-items-center mb-3"
+  style={{
+    width: "300px",
+    height: "185px",
+    boxShadow: "0 1px 5px rgba(0, 123, 255, 0.64)",
+    background: "linear-gradient(135deg,rgb(226, 251, 255), #ffffff)",
+  }}
+>
+
             <Link
               className="py-3 text-center"
               style={{ width: "300px", height: "185px" }}
@@ -120,23 +126,31 @@ const AboutDeveloperSection = () => (
             textAlign:"justify"
           }}
         >
-          سامانه همیار معلم توسط محمد لبافی، آموزگار و توسعه‌دهنده ارشد وب
+          سامانه همیار توسط محمد لبافی، آموزگار و توسعه‌دهنده ارشد وب
           (Senior MERN Stack Developer) طراحی و پیاده‌سازی شده است تا مسیر
           آموزش را برای معلمان و دانش‌آموزان دبستان شهید جهان‌آرا آسان‌تر
           و حرفه‌ای‌تر کند.
         </p>
         <div className="text-center text-lg-end">
-          <Link
-          href="/hamyar/about-developer"
-          className="mt-3 btn-main-2 text-white d-flex align-items-center"
-          style={{ width: "fit-content" }}
-          aria-label="درباره محمد لبافی توسعه دهنده سامانه همیار دبستان شهید جهان آرا"
-        >
-          <span style={{ fontFamily: "KalamehWeb-Bold" }}>
-            اطلاعات بیشتر درباره توسعه دهنده
-          </span>
-          <i className="bi bi-chevron-double-left me-2 pt-2 animated-icon"></i>
-        </Link>
+        <Link
+  href="/hamyar/about-developer"
+  className="mt-3 btn-main-2 text-white d-flex align-items-center justify-content-center"
+  style={{
+    padding: "10px 16px",
+    minWidth: "200px",
+    maxWidth: "100%",
+    width: "auto",
+    whiteSpace: "nowrap",
+    fontSize:"15px"
+  }}
+  aria-label="درباره محمد لبافی توسعه دهنده سامانه همیار دبستان شهید جهان آرا"
+>
+  <span style={{ fontFamily: "KalamehWeb-Bold" }}>
+    اطلاعات بیشتر درباره توسعه دهنده
+  </span>
+  <i className="bi bi-chevron-double-left me-2 pt-2 animated-icon"></i>
+</Link>
+
         </div>
       </div>
       <div className="col-12 col-lg-5 text-center mt-4 mt-lg-0">
@@ -145,8 +159,8 @@ const AboutDeveloperSection = () => (
                 alt="محمد لبافی"
                 width={1280}
                 height={1280}
-                className="shadow border"
-                style={{ borderRadius: "50%" , width:"160px" , height:"160px" }}
+                className=""
+                style={{ borderRadius: "50%" , width:"160px" , height:"160px" , boxShadow: "5px 5px 15px rgba(0, 123, 255, 0.64) , -5px -5px 15px rgba(217, 0, 255, 0.64) "  }}
               />
       </div>
     </div>

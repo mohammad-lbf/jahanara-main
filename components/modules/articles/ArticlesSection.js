@@ -1,8 +1,8 @@
 import React from 'react';
-import ArticleCard from '../../mostamarComponents/ArticleCard';
-import articles from '@/DB/articles';
+import ArticleCard from '../../mostamarComponents/modules/ArticleCard';
 
-const ArticlesSection = () => {
+
+const ArticlesSection = ({articles}) => {
     return (
         <>
             {/* <h3 className="color-linear text-center text-lg-end">آزمون ها</h3> */}

@@ -11,20 +11,23 @@ const Footer = () => {
                 <div className="col-12 col-lg-4 text-center text-lg-end">
                     <div className="d-flex align-items-center w-100 justify-content-center justify-content-lg-start">
                             <div className="d-flex flex-column align-items-center align-items-lg-start text-decoration-none">
-                            <Link style={{height:"47px"}} className='' href={"/"}>
+                            <Link style={{height:"47px"}} className='' href={"/hamyar"}>
                                 <Image style={{width:"146px" , height:"40px"}} alt='logo' width={1000} height={300} src={'/images/hamyar/components/modules/logo-light.png'} />
                             </Link>
                         </div>
                     </div>
                     <div className='d-flex justify-content-center justify-content-lg-start w-100'>
                         <p style={{fontFamily:"KalamehWeb-Medium" , fontSize:"14px"}} className={`lh-lg mt-3 mb-3 ${styles.textColorMilky}`} >
-                        سامانه همیار معلم دبستان جهان آرا یک پلتفرم نوین و کارآمد است که به منظور ارتقاء کیفیت آموزش و تسهیل فرآیند یادگیری در این دبستان طراحی شده است. این سامانه با هدف فراهم کردن ابزارهای لازم برای معلمان و دانش‌آموزان، بهبود ارتباطات آموزشی و مدیریتی و ایجاد فضایی مناسب برای یادگیری، راه‌اندازی شده است.
+                        سامانه همیار دبستان جهان آرا یک پلتفرم نوین و کارآمد است که به منظور ارتقاء کیفیت آموزش و تسهیل فرآیند یادگیری در این دبستان طراحی شده است. این سامانه با هدف فراهم کردن ابزارهای لازم برای معلمان و دانش‌آموزان، بهبود ارتباطات آموزشی و مدیریتی و ایجاد فضایی مناسب برای یادگیری، راه‌اندازی شده است.
                         {/* آدرس: میدان خراسان، خیابان خراسان، خیابان لرزاده، بعد از درمانگاه خیریه شهدای لرزاده، پلاک ۲۶ */}
                             </p>
                             
                     </div>
                 </div>
                 <div className="col-12 col-lg-4 text-center text-lg-end">
+                <p style={{fontFamily:"KalamehWeb-Medium" , fontSize:"14px"}} className={`lh-lg mt-3 mb-3 ${styles.textColorMilky}`}>
+                    <i className="bi bi-globe ms-1"></i>
+                    سایت دبستان: www.jahanaraschool.ir</p>
                 <p style={{fontFamily:"KalamehWeb-Medium" , fontSize:"14px"}} className={`lh-lg mt-3 mb-3 ${styles.textColorMilky}`} >
                 <i class="bi bi-geo-alt-fill"></i>  آدرس: میدان خراسان، خیابان خراسان، خیابان لرزاده، بعد از درمانگاه خیریه شهدای لرزاده، پلاک ۲۶
                             </p>
@@ -38,7 +41,6 @@ const Footer = () => {
                 <i class="bi bi-envelope-fill ms-1"></i>
                     کد پستی: 1177935311
                 </p>
-                <p className='text-white text-center text-lg-end mt-2'></p>
                 </div>
                 <div className="col-12 col-lg-3 d-flex flex-column align-items-center">
                     <p style={{width:"170px" ,  fontFamily:"KalamehWeb-Bold"}} className={`text-warning mb-4 mt-4 mt-lg-0 fw-bold text-center ${styles.textColorMilky}`}>
@@ -58,9 +60,12 @@ const Footer = () => {
                             درباره توسعه دهنده
                         </Link>
                         <Link style={{fontFamily:"KalamehWeb-Medium"}}  className={`mx-2 mb-2 ${styles.scaleHover} pb-1`} href="/hamyar/developer">
-                            مستندات
+                            درباره سامانه همیار
                         </Link>
-                        <Link style={{fontFamily:"KalamehWeb-Medium"}}  className={`mx-2 mb-2 ${styles.scaleHover} pb-1`} href="/hamyar/developer">
+                        <Link style={{fontFamily:"KalamehWeb-Medium"}}  className={`mx-2 mb-2 ${styles.scaleHover} pb-1`} href="/hamyar/about-school">
+                            درباره ما
+                        </Link>
+                        <Link style={{fontFamily:"KalamehWeb-Medium"}}  className={`mx-2 mb-2 ${styles.scaleHover} pb-1`} href="/">
                             بازگشت به سایت دبستان
                         </Link>
                         {/* <div className='m-3'><a style={{fontFamily:"KalamehWeb-Bold" , border:"none"}} className={`p-0 border-0`} href={"https://worksave-jahan.netlify.app/"}><button style={{fontFamily:"KalamehWeb-Bold"}} class="button-85 border-0" role="button">برنامه پیشرفته ثبت کار</button></a></div> */}

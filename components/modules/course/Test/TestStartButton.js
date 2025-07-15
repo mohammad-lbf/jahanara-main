@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CertificateGenerator from "./CertificateGenerator";
+import ToPersianNumber from "@/assets/functions/ToPersianNumber";
 
 const TestStartButton = ({ setShowModal, courseName , courseTime }) => {
   const [userLocalName , setUserLocalName] = useState("")
@@ -26,7 +27,7 @@ const TestStartButton = ({ setShowModal, courseName , courseTime }) => {
 };
   return (
     <div>
-      <div className="text-center shadow-sm border p-3 mt-3">
+      <div className="text-center shadow-sm border px-3 pt-3 mt-3">
         <p style={{ fontFamily: "KalamehWeb-Medium", fontSize: "17px" }}>شرکت در آزمون دوره</p>
         <p
           className="mt-3 lh-lg"
@@ -40,13 +41,13 @@ const TestStartButton = ({ setShowModal, courseName , courseTime }) => {
                 شما قبلاً در این آزمون شرکت کردید. 
               </p>
               <p style={{ fontFamily: "KalamehWeb-Medium", fontSize: "15px", color: "red" }}>
-              نمره شما: {userMark}
+              نمره شما: {ToPersianNumber(userMark)}
              </p>
                 </>
             )}
         <button
             // style={{backgroundColor:`${userStatus && userStatus !== "not-passed" && "red"}}`}}
-          className={` w-50 text-center rounded border-0 fs-15 mt-3 ${userStatus && userStatus !== "not-passed" ? "btn btn-danger" : "btn-main-2"}`}
+          className={` w-50 text-center rounded border-0 fs-15 mb-3 ${userStatus && userStatus !== "not-passed" ? "btn btn-danger" : "btn-main-2"}`}
           onClick={() => setShowModal(true)}
         >
           {userStatus && userStatus !== "not-passed" ? "آزمون مجدد" : "شروع آزمون"}

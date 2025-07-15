@@ -50,9 +50,9 @@ const Sevom = ({ soalatCount, tarhedarsCount, mohtavaCount, darsnamehCount }) =>
         <meta property="og:title" content="پایه سوم دبستان | سامانه همیار دبستان شهید جهان آرا" />
         <meta property="og:description" content="دسترسی به ابزارها و محتوای آموزشی پایه سوم دبستان شهید جهان‌آرا شامل سوالات، طرح درس، درسنامه و محتوای کمک‌درسی." />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:site_name" content="دبستان شهید جهان آرا" />
 
-        {/* <meta name="twitter:card" content="summary_large_image" /> */}
+        <meta property="og:site_name" content="دبستان شهید جهان آرا" />
+        
         <meta name="twitter:title" content="پایه سوم دبستان | سامانه همیار دبستان شهید جهان آرا" />
         <meta name="twitter:description" content="دسترسی به ابزارها و محتوای آموزشی پایه سوم دبستان شهید جهان‌آرا شامل سوالات، طرح درس، درسنامه و محتوای کمک‌درسی." />
       </Head>

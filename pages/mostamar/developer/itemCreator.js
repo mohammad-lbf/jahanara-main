@@ -1,0 +1,21 @@
+import Head from "next/head";
+import FileForm from "@/components/modules/Hamyar modules/components/modules/FileForm";
+import HamyarLayout from "@/components/layout/HamyarLayout";
+import MostamarLayout from "@/components/layout/MostamarLayout";
+
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>صفحه فرم فایل | سامانه همیار دبستان شهید جهان آرا</title>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+    <MostamarLayout>
+      <main style={{ minHeight: "100vh" }}>
+        <FileForm />
+      </main>
+    </MostamarLayout>
+    </>
+  );
+}

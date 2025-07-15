@@ -46,19 +46,6 @@ const FirstBanner = () => {
                 مطالعه علمی و توسعه فردی
               </h3>
 
-              {/* 
-              <h3
-                style={{
-                  fontFamily: "KalamehWeb-Medium",
-                  fontSize: "17px",
-                  color: "#090736",
-                }}
-                className="mt-3"
-              >
-                تعیین سطح زبان چیست و دقیقا چه کاربردهایی دارد؟
-              </h3> 
-              */}
-
               <p
                 style={{
                   fontFamily: "KalamehWeb-Medium",
@@ -76,17 +63,6 @@ const FirstBanner = () => {
 
             {/* تصویر سمت چپ (در حالت دسکتاپ) */}
             <div className="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end">
-              {/* 
-              <Image
-                style={{ borderRadius: "10px", width: "250px", height: "180px" }}
-                className="d-none d-lg-flex"
-                alt="html-logo"
-                width={450}
-                height={450}
-                src="/images/components/modules/7622025.webp"
-              /> 
-              */}
-
               <Image
                 style={{ borderRadius: "10px" }}
                 className="img-fluid d-none d-lg-flex"

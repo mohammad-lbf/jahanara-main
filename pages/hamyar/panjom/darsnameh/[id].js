@@ -122,7 +122,7 @@ const Soalat = () => {
             </h2>
           </div>
           <div className="col-12 col-lg-5 text-center text-lg-start">
-            <Image className="mt-3 mt-lg-0" style={{ width: "50px", height: "50px" }} src={"/images/hamyar/components/modules/number-5.png"} height={512} width={512} />
+            <Image alt='number-5' className="mt-3 mt-lg-0" style={{ width: "50px", height: "50px" }} src={"/images/hamyar/components/modules/number-5.png"} height={512} width={512} />
           </div>
         </div>
       </div>

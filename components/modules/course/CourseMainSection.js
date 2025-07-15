@@ -3,7 +3,7 @@ import CourseAuthor from './CourseAuthor';
 import CourseTumbnailContainer from './CourseTumbnailContainer';
 import CourseContent from './CourseContent';
 
-const CourseMainSection = ({testStarted , courseCoverPhoto, setTestStarted , testFinished , setTestFinished , courseName,coursePublishDate,courseTumbnailSrc,courseCaption,courseQuestions,courseSlug,courseTime,courseVideos,courseEpizodes}) => {
+const CourseMainSection = ({testStarted,courseTeacher ,courseTeacherProfileImage , courseCoverPhoto, setTestStarted , testFinished , setTestFinished , courseName,coursePublishDate,courseTumbnailSrc,courseCaption,courseQuestions,courseSlug,courseTime,courseVideos,courseEpizodes}) => {
     
 
     return (
@@ -14,11 +14,14 @@ const CourseMainSection = ({testStarted , courseCoverPhoto, setTestStarted , tes
                 {courseName}
             </h3>
             <div className='d-flex justify-content-between align-items-center'>
-                <CourseAuthor coursePublishDate={coursePublishDate} />
+                <CourseAuthor
+                 coursePublishDate={coursePublishDate}
+                 courseTeacher={courseTeacher}
+                 courseTeacherProfileImage={courseTeacherProfileImage} />
                 <span className='fw-bold gray-text-color'></span>
             </div>
 
-                <CourseContent  
+                <CourseContent
                 testStarted={testStarted}
                 setTestStarted={setTestStarted}
                 testFinished={testFinished}

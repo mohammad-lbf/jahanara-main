@@ -1,5 +1,5 @@
 import React from 'react';
-import ArticleCard from '../../mostamarComponents/ArticleCard';
+import ArticleCard from '../../mostamarComponents/modules/ArticleCard';
 import articles from '../../../DB/articles/index';
 import Link from 'next/link';
 import { FaChevronDown } from 'react-icons/fa';
@@ -14,7 +14,7 @@ const ArticlesSection = () => {
     <section
       className="container shadow-sm border my-4 py-4 px-3 rounded"
       style={{
-        background: "linear-gradient(135deg,rgb(246, 231, 255) 0%,rgb(232, 246, 255) 100%)",
+        // background: "linear-gradient(135deg,rgb(246, 231, 255) 0%,rgb(232, 246, 255) 100%)",
       }}
     >
       <h2

@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>صفحه فرم فایل | سامانه همیار معلم دبستان شهید جهان آرا</title>
+        <title>صفحه فرم فایل | سامانه همیار دبستان شهید جهان آرا</title>
         <meta name="robots" content="noindex, nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

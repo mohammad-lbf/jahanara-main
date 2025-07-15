@@ -51,8 +51,7 @@ const Chaharom = ({ soalatCount, tarhedarsCount, mohtavaCount, darsnamehCount })
         <meta property="og:description" content="دسترسی به ابزارها و محتوای آموزشی پایه چهارم دبستان شهید جهان‌آرا شامل سوالات، طرح درس، درسنامه و محتوای کمک‌درسی." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="دبستان شهید جهان آرا" />
-
-        {/* <meta name="twitter:card" content="summary_large_image" /> */}
+        
         <meta name="twitter:title" content="پایه چهارم دبستان | سامانه همیار دبستان شهید جهان آرا" />
         <meta name="twitter:description" content="دسترسی به ابزارها و محتوای آموزشی پایه چهارم دبستان شهید جهان‌آرا شامل سوالات، طرح درس، درسنامه و محتوای کمک‌درسی." />
       </Head>
@@ -80,7 +79,7 @@ const Chaharom = ({ soalatCount, tarhedarsCount, mohtavaCount, darsnamehCount })
                 className='mt-3 mb-4 mb-lg-0 text-center text-lg-end'
                 style={{ fontSize: "15px", fontFamily: "KalamehWeb-Medium", color: "#000", lineHeight: "1.6rem" }}
               >
-                پایه چهارم دبستان | سامانه همیار معلم دبستان جهان آرا
+                پایه چهارم دبستان | سامانه همیار دبستان جهان آرا
               </p>
             </div>
             <div className='col-12 col-lg-5 text-center text-lg-start'>

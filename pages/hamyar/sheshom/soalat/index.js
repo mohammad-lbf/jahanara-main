@@ -1,15 +1,26 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
-import data from '@/DB/Hamyar DB/sheshom/soalat';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Card from '@/components/modules/Hamyar modules/components/modules/Card';
 import styles from '../../../../styles/filterselect.module.css';
 import HamyarLayout from '@/components/layout/HamyarLayout';
-import toPersianNumber from '@/assets/functions/ToPersianNumber';
 import CountByBook from '@/components/modules/Hamyar modules/components/modules/CountByBook';
 import CountByCreator from '@/components/modules/Hamyar modules/components/modules/CountByCreator';
+import Pagination from '@/components/modules/Hamyar modules/components/modules/Pagination';
 
+export async function getStaticProps() {
+  const data = await import('@/DB/Hamyar DB/sheshom/soalat');
+  return {
+    props: {
+      data: data.default,
+    },
+  };
+}
 
-const Soalat = () => {
+const Soalat = ({ data }) => {
+  const router = useRouter();
+  const canonicalUrl = `https://jahanaraschool.ir${router.asPath === "/" ? "" : router.asPath}`;
   const reverseData = [...data].reverse();
 
   const [selectedOption, setSelectedOption] = useState('all');
@@ -47,62 +58,29 @@ const Soalat = () => {
     });
   };
 
-  const renderPagination = () => (
-    <div className='container'>
-      <div className='row justify-content-center flex-column align-items-center'>
-        <div className='text-center bg-white p-3 rounded border mb-3' style={{ width: "fit-content" }}>
-          حداکثر تعداد نمایش در هر صفحه: {toPersianNumber(itemsPerPage)}
-          <nav aria-label="" className='mt-2'>
-            <ul className="pagination justify-content-center">
-              <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                <a
-                  className="page-link"
-                  href="#"
-                  aria-label="Previous"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (currentPage > 1) handlePageChange(currentPage - 1);
-                  }}
-                >
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              {Array.from({ length: totalPages }, (_, i) => (
-                <li key={i + 1} className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}>
-                  <a
-                    className="page-link mb-1"
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handlePageChange(i + 1);
-                    }}
-                  >
-                    {toPersianNumber(i + 1)}
-                  </a>
-                </li>
-              ))}
-              <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-                <a
-                  className="page-link"
-                  href="#"
-                  aria-label="Next"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (currentPage < totalPages) handlePageChange(currentPage + 1);
-                  }}
-                >
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <HamyarLayout>
+      <Head>
+        <title>نمونه سوالات پایه ششم | سامانه همیار دبستان شهید جهان آرا</title>
+        <meta
+          name="description"
+          content="در این صفحه می‌توانید به بانک نمونه سوالات پایه ششم دبستان شهید جهان‌آرا به تفکیک درس و طراح دسترسی داشته باشید."
+        />
+        <meta name="keywords" content="نمونه سوالات ششم دبستان, سوالات ابتدایی, دبستان شهید جهان آرا, سوالات امتحانی ششم, همیار" />
+        <meta name="author" content="محمد لبافی" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href={canonicalUrl} />
+        <link rel="icon" href="/favicon.ico" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="fa_IR" />
+        <meta property="og:title" content="نمونه سوالات پایه ششم | سامانه همیار دبستان شهید جهان آرا" />
+        <meta property="og:description" content="بانک کامل نمونه سوالات پایه ششم دبستان شهید جهان‌آرا با امکان فیلتر بر اساس درس یا طراح سوال." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:site_name" content="دبستان شهید جهان آرا" />
+      </Head>
+
       <div style={{ minHeight: "100vh" }} className="page-padding-tops">
         <div style={{ marginTop: "50px", paddingTop: "20px", paddingBottom: "20px" }} className="container bg-white rounded shadow border">
           <div className="row align-items-center">
@@ -112,34 +90,34 @@ const Soalat = () => {
               </h2>
             </div>
             <div className="col-12 col-lg-5 text-center text-lg-start">
-              <Image className="mt-3 mt-lg-0" style={{ width: "50px", height: "50px" }} src={"/images/hamyar/components/modules/number-6.png"} height={512} width={512} />
+              <Image className="mt-3 mt-lg-0" style={{ width: "50px", height: "50px" }} src={"/images/hamyar/components/modules/number-6.png"} height={512} width={512} alt="پایه ششم" />
             </div>
           </div>
         </div>
         <div style={{ marginTop: "0px", paddingTop: "20px" }} className="container mb-3 mt-3">
-        <div className="row align-items-center justify-content-center">
-          <div className="col-12 col-md-6 d-flex justify-content-center mb-3 mb-md-0">
-            <div className={styles.container}>
-              <div className={styles.formGroup}>
-                <label style={{ fontFamily: "KalamehWeb-Bold" }} htmlFor="filter" className={styles.label}>
-                  انتخاب درس:
-                </label>
-                    <CountByBook data={data} handleChange={handleChange} selectedOption={selectedOption} />
+          <div className="row align-items-center justify-content-center">
+            <div className="col-12 col-md-6 d-flex justify-content-center mb-3 mb-md-0">
+              <div className={styles.container}>
+                <div className={styles.formGroup}>
+                  <label style={{ fontFamily: "KalamehWeb-Bold" }} htmlFor="filter" className={styles.label}>
+                    انتخاب درس:
+                  </label>
+                  <CountByBook data={data} handleChange={handleChange} selectedOption={selectedOption} />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-12 col-md-6 d-flex justify-content-center">
-            <div className={styles.container}>
-              <div className={styles.formGroup} style={{ backgroundColor: "rgb(13, 209, 143)" }}>
-                <label style={{ fontFamily: "KalamehWeb-Bold" }} htmlFor="creator-filter" className={styles.label}>
-                  انتخاب طراح:
-                </label>
+            <div className="col-12 col-md-6 d-flex justify-content-center">
+              <div className={styles.container}>
+                <div className={styles.formGroup} style={{ backgroundColor: "rgb(13, 209, 143)" }}>
+                  <label style={{ fontFamily: "KalamehWeb-Bold" }} htmlFor="creator-filter" className={styles.label}>
+                    انتخاب طراح:
+                  </label>
                   <CountByCreator data={data} handleChange={handleCreatorChange} selectedCreator={selectedCreator} />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
         {filteredData.length === 0 ? (
           <div className="text-center px-2" style={{ margin: "50px 0" }}>
             <p style={{ fontFamily: "KalamehWeb-Bold", fontSize: "18px", color: "red", lineHeight: "1.9" }}>
@@ -148,7 +126,13 @@ const Soalat = () => {
           </div>
         ) : (
           <>
-            {renderPagination()}
+            <Pagination
+                totalItems={filteredData.length}
+                itemsPerPage={itemsPerPage}
+                currentPage={currentPage}
+                onPageChange={handlePageChange}
+            />
+
             <div className="container">
               <div className="row justify-content-center align-items-center">
                 {currentData.map((item) => (
@@ -158,7 +142,13 @@ const Soalat = () => {
                 ))}
               </div>
             </div>
-            {renderPagination()}
+            <Pagination
+                totalItems={filteredData.length}
+                itemsPerPage={itemsPerPage}
+                currentPage={currentPage}
+                onPageChange={handlePageChange}
+            />
+
           </>
         )}
       </div>

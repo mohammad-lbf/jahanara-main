@@ -1,3 +1,4 @@
+import ToPersianNumber from '@/assets/functions/ToPersianNumber';
 import React from 'react';
 
 const ReportOption = ({ optionText, index, correctanswer, clientAnswer, status }) => {
@@ -7,8 +8,8 @@ const ReportOption = ({ optionText, index, correctanswer, clientAnswer, status }
         <div
             style={{ border: `2px solid ${borderColor}` }}
             className={`${bgColor} d-flex align-items-center justify-content-end w-100 py-3 ps-2 rounded mb-2 flex-row-reverse`}>
-            <p style={{direction:"rtl" , textAlign:"start"}} className="fw-200 me-1 cur-poin fs-13 fs-sm-15">{optionText}</p>
-            <p className="fw-200 me-1 cur-poin fs-13 fs-sm-15">({index + 1})</p>
+            <p style={{direction:"rtl" , textAlign:"start"}} className="fw-200 me-1 cur-poin mb-0 fs-13 fs-sm-15">{optionText}</p>
+            <p className="fw-200 me-1 cur-poin fs-13 fs-sm-15 mb-0">({ToPersianNumber(index + 1)})</p>
         </div>
     );
 };

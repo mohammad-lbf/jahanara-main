@@ -11,6 +11,8 @@ const CourseTemplate = ({courseData}) => {
 
     const {
         courseName,
+        courseTeacher,
+        courseTeacherProfileImage,
         coursePublishDate,
         courseTumbnailSrc,
         courseCaption,
@@ -21,7 +23,7 @@ const CourseTemplate = ({courseData}) => {
         courseCoverPhoto,
         courseEpizodes
     } = courseData;
-    console.log(courseQuestions)
+    console.log(courseVideos)
     const dispatch = useDispatch()
     useEffect(()=>{
         dispatch({type:"RESET"})
@@ -40,7 +42,9 @@ const CourseTemplate = ({courseData}) => {
                                 <CourseAsideSection courseName={courseName} courseTime={courseTime} courseVideos={courseVideos} />
                             </div>
                             <div  className='col-12 col-xl-8'>
-                                <CourseMainSection 
+                                <CourseMainSection
+                                courseTeacher={courseTeacher} 
+                                courseTeacherProfileImage={courseTeacherProfileImage}
                                 testStarted={testStarted}
                                 setTestStarted={setTestStarted}
                                 testFinished={testFinished}

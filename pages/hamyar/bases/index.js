@@ -12,16 +12,16 @@ const Bases = () => {
   return (
     <>
       <Head>
-        <title>پایه‌های تحصیلی | سامانه همیار معلم دبستان شهید جهان‌آرا | jahanaraschool.ir</title>
+        <title>پایه‌های تحصیلی | سامانه همیار دبستان شهید جهان‌آرا | jahanaraschool.ir</title>
         <meta
           name="description"
-          content="در سامانه همیار معلم دبستان شهید جهان‌آرا، به ابزارها، محتوای آموزشی و منابع پایه‌های تحصیلی سوم، چهارم، پنجم و ششم دسترسی پیدا کنید. روی پایه موردنظر کلیک کنید و مسیر آموزش خود را آسان‌تر کنید."
+          content="در سامانه همیار دبستان شهید جهان‌آرا، به ابزارها، محتوای آموزشی و منابع پایه‌های تحصیلی سوم، چهارم، پنجم و ششم دسترسی پیدا کنید. روی پایه موردنظر کلیک کنید و مسیر آموزش خود را آسان‌تر کنید."
         />
         <meta name="author" content="محمد لبافی" />
         <meta name="robots" content="index, follow" />
         <meta
           name="keywords"
-          content="سامانه همیار معلم, پایه سوم, پایه چهارم, پایه پنجم, پایه ششم, دبستان شهید جهان آرا, کتاب درسی, آموزش ابتدایی"
+          content="سامانه همیار, پایه سوم, پایه چهارم, پایه پنجم, پایه ششم, دبستان شهید جهان آرا, کتاب درسی, آموزش ابتدایی"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={canonicalUrl} />
@@ -31,11 +31,11 @@ const Bases = () => {
         <meta property="og:locale" content="fa_IR" />
         <meta
           property="og:title"
-          content="پایه‌های تحصیلی | سامانه همیار معلم دبستان شهید جهان‌آرا | jahanaraschool.ir"
+          content="پایه‌های تحصیلی | سامانه همیار دبستان شهید جهان‌آرا | jahanaraschool.ir"
         />
         <meta
           property="og:description"
-          content="در سامانه همیار معلم دبستان شهید جهان‌آرا، به ابزارها، محتوای آموزشی و منابع پایه‌های تحصیلی سوم، چهارم، پنجم و ششم دسترسی پیدا کنید. روی پایه موردنظر کلیک کنید و مسیر آموزش خود را آسان‌تر کنید."
+          content="در سامانه همیار دبستان شهید جهان‌آرا، به ابزارها، محتوای آموزشی و منابع پایه‌های تحصیلی سوم، چهارم، پنجم و ششم دسترسی پیدا کنید. روی پایه موردنظر کلیک کنید و مسیر آموزش خود را آسان‌تر کنید."
         />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:site_name" content="دبستان شهید جهان آرا" />
@@ -45,11 +45,11 @@ const Bases = () => {
         {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta
           name="twitter:title"
-          content="پایه‌های تحصیلی | سامانه همیار معلم دبستان شهید جهان‌آرا | jahanaraschool.ir"
+          content="پایه‌های تحصیلی | سامانه همیار دبستان شهید جهان‌آرا | jahanaraschool.ir"
         />
         <meta
           name="twitter:description"
-          content="در سامانه همیار معلم دبستان شهید جهان‌آرا، به ابزارها، محتوای آموزشی و منابع پایه‌های تحصیلی سوم، چهارم، پنجم و ششم دسترسی پیدا کنید. روی پایه موردنظر کلیک کنید و مسیر آموزش خود را آسان‌تر کنید."
+          content="در سامانه همیار دبستان شهید جهان‌آرا، به ابزارها، محتوای آموزشی و منابع پایه‌های تحصیلی سوم، چهارم، پنجم و ششم دسترسی پیدا کنید. روی پایه موردنظر کلیک کنید و مسیر آموزش خود را آسان‌تر کنید."
         />
         <meta name="twitter:image" content="https://jahanaraschool.ir/images/hamyar/og-image.jpg" />
       </Head>
@@ -61,8 +61,9 @@ const Bases = () => {
               marginTop: "50px",
               paddingTop: "50px",
               paddingBottom: "50px",
+              boxShadow: "2px 2px 15px rgba(0, 123, 255, 0.64) , -2px -2px 15px rgba(217, 0, 255, 0.64) "  
             }}
-            className="container bg-white rounded shadow border"
+            className="container bg-white rounded border" 
           >
             <div className="row align-items-center">
               <div className="col-12 col-lg-7">
@@ -104,8 +105,8 @@ const Bases = () => {
             <div className="row align-items-center justify-content-center">
               <div className="col-12 col-md-6 col-xl-4 col-xxl-3 d-flex justify-content-center">
                 <div
-                  className="bg-white rounded border shadow-sm d-flex flex-column align-items-center mb-3"
-                  style={{ width: "300px", height: "185px" }}
+                  className="bg-white rounded border d-flex flex-column align-items-center mb-3"
+                  style={{ width: "300px",boxShadow: "0 1px 5px rgba(0, 123, 255, 0.64)",background: "linear-gradient(135deg,rgb(226, 251, 255), #ffffff)", height: "185px" }}
                 >
                   <Link
                     className="py-3 text-center"
@@ -134,8 +135,8 @@ const Bases = () => {
               </div>
               <div className="col-12 col-md-6 col-xl-4 col-xxl-3 d-flex justify-content-center">
                 <div
-                  className="bg-white rounded border shadow-sm d-flex flex-column align-items-center mb-3"
-                  style={{ width: "300px", height: "185px" }}
+                  className="bg-white rounded border d-flex flex-column align-items-center mb-3"
+                  style={{ width: "300px",boxShadow: "0 1px 5px rgba(0, 123, 255, 0.64)",background: "linear-gradient(135deg,rgb(226, 251, 255), #ffffff)", height: "185px" }}
                 >
                   <Link
                     className="py-3 text-center"
@@ -164,8 +165,8 @@ const Bases = () => {
               </div>
               <div className="col-12 col-md-6 col-xl-4 col-xxl-3 d-flex justify-content-center">
                 <div
-                  className="bg-white rounded border shadow-sm d-flex flex-column align-items-center mb-3"
-                  style={{ width: "300px", height: "185px" }}
+                  className="bg-white rounded border d-flex flex-column align-items-center mb-3"
+                  style={{ width: "300px",boxShadow: "0 1px 5px rgba(0, 123, 255, 0.64)",background: "linear-gradient(135deg,rgb(226, 251, 255), #ffffff)", height: "185px" }}
                 >
                   <Link
                     className="py-3 text-center"
@@ -194,8 +195,8 @@ const Bases = () => {
               </div>
               <div className="col-12 col-md-6 col-xl-4 col-xxl-3 d-flex justify-content-center">
                 <div
-                  className="bg-white rounded border shadow-sm d-flex flex-column align-items-center mb-3"
-                  style={{ width: "300px", height: "185px" }}
+                  className="bg-white rounded border d-flex flex-column align-items-center mb-3"
+                  style={{ width: "300px",boxShadow: "0 1px 5px rgba(0, 123, 255, 0.64)",background: "linear-gradient(135deg,rgb(226, 251, 255), #ffffff)", height: "185px" }}
                 >
                   <Link
                     className="py-3 text-center"

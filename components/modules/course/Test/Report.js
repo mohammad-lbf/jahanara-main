@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import DownloadPdfButton from './DownloadPdfButton';
 import ReportQuestions from './ReportQuestions';
 import CertificateGenerator from './CertificateGenerator';
+import ToPersianNumber from '@/assets/functions/ToPersianNumber';
 
 const Report = (props) => {
     const { questions, noAnswers, corrects, incorrects } = useSelector(state => state);
@@ -37,7 +38,7 @@ const Report = (props) => {
                 userData = {
                     userName,
                     userTests: {
-                        "آموزش ورد مقدماتی":{ userStatus: 'not-passed', userMark: '0' }
+                        
                     },
                   };
             }
@@ -98,7 +99,7 @@ const Report = (props) => {
                     textAlign:"justify" , 
                     fontFamily:"KalamehWeb-Medium"}}
                     className="text-light text-center mt-2"
-                >نمره شما {pointPercent} از 20</p>
+                >نمره شما {ToPersianNumber(pointPercent)} از {ToPersianNumber(20)}</p>
                 <p 
                 style={{fontSize:"15px" , 
                     lineHeight:"2em" , 
@@ -111,7 +112,7 @@ const Report = (props) => {
                     lineHeight:"2em" , 
                     textAlign:"justify" , 
                     fontFamily:"KalamehWeb-Medium"}}
-                    className="text-center mt-3"
+                    className="text-center mt-3 mb-0"
                     >{userLocalName} عزیز،</p>
 
             {
@@ -121,7 +122,7 @@ const Report = (props) => {
                 color:"#474d52" ,lineHeight:"2em" , 
                 textAlign:"center" , 
                 fontFamily:"KalamehWeb-Medium"}} 
-                className="mt-3">{`متاسفیم، شما در آزمون ${courseName} مردود شده اید`}</p> :
+                className="">{`متاسفیم، شما در آزمون ${courseName} مردود شده اید`}</p> :
                 <>
                 <p 
                 style={{fontSize:"15px" , 
@@ -148,13 +149,13 @@ const Report = (props) => {
             </div>
                     </>
                 }
-                <button className='text-center rounded border-0 fs-15 mt-3 btn-main-2 mb-3' onClick={refreshPage}>بازگشت به صفحه دوره</button>
+                <button className='text-center rounded border-0 fs-15 btn-main-2 mb-3' onClick={refreshPage}>بازگشت به صفحه دوره</button>
 
             <div className="text-center fs-15 w-100 d-flex  justify-content-center align-items-center flex-column">
-                <p style={{ width: "250px", height: "40px", direction: "ltr", paddingTop: "13px" , fontFamily:"KalamehWeb-Medium" }} className="my-1 mx-1 mx-sm-2 px-3 rounded bg-light text-dark border"> {questions.length} : تعداد کل سوالات</p>
-                <p style={{ width: "250px", height: "40px", direction: "ltr", paddingTop: "13px" , fontFamily:"KalamehWeb-Medium" }} className="my-1 mx-1 mx-sm-2 px-3 rounded bg-success text-white">{corrects.length} : تعداد پاسخ های درست</p>
-                <p style={{ width: "250px", height: "40px", direction: "ltr", paddingTop: "13px" , fontFamily:"KalamehWeb-Medium" }} className="my-1 mx-1 mx-sm-2 px-3 rounded bg-danger  text-white">{incorrects.length} : تعداد پاسخ های نادرست</p>
-                <p style={{ width: "250px", height: "40px", direction: "ltr", paddingTop: "13px" , fontFamily:"KalamehWeb-Medium" }} className="my-1 mx-1 mx-sm-2 px-3 rounded bg-warning text-main-1">{noAnswers.length} : تعداد سوالات بدون پاسخ</p>
+                <p style={{ width: "250px", height: "40px", direction: "ltr", paddingTop: "13px" , fontFamily:"KalamehWeb-Medium" }} className="my-1 mx-1 mx-sm-2 px-3 py-2 rounded bg-light text-dark border"> {ToPersianNumber(questions.length)} : تعداد کل سوالات</p>
+                <p style={{ width: "250px", height: "40px", direction: "ltr", paddingTop: "13px" , fontFamily:"KalamehWeb-Medium" }} className="my-1 mx-1 mx-sm-2 px-3 rounded py-2 bg-success text-white">{ToPersianNumber(corrects.length)} : تعداد پاسخ های درست</p>
+                <p style={{ width: "250px", height: "40px", direction: "ltr", paddingTop: "13px" , fontFamily:"KalamehWeb-Medium" }} className="my-1 mx-1 mx-sm-2 px-3 rounded py-2 bg-danger  text-white">{ToPersianNumber(incorrects.length)} : تعداد پاسخ های نادرست</p>
+                <p style={{ width: "250px", height: "40px", direction: "ltr", paddingTop: "13px" , fontFamily:"KalamehWeb-Medium" }} className="my-1 mx-1 mx-sm-2 px-3 rounded py-2 bg-warning text-main-1">{ToPersianNumber(noAnswers.length)} : تعداد سوالات بدون پاسخ</p>
             </div>
             </div>
             <div className="w-100 text-end mt-3">

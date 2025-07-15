@@ -6,10 +6,11 @@ import Questions from './Questions';
 import Timer from './Timer';
 import PreventRefresh from '../../../modules/PreventRefresh';
 import TestStartButton from './TestStartButton';
+import Signup from './Signup';
 
 const Test = (props) => {
-
-    const [showModal, setShowModal] = useState(false); // مدال در ابتدا نمایش داده می‌شود
+    const [showModal, setShowModal] = useState(false);
+    const [showSignup, setShowSignup] = useState(false);
 
     const courseName = props.courseName;
     const courseQuestions = props.courseQuestions;
@@ -22,7 +23,6 @@ const Test = (props) => {
 
     const testState = useSelector(state => state);
     const dispatch = useDispatch();
-    // const { testName  , testTime, questions } = props.testData;
     const data = courseQuestions;
 
     useEffect(() => {
@@ -56,9 +56,29 @@ const Test = (props) => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     };
 
+    const checkUserName = () => {
+        if (typeof window !== 'undefined') {
+            const storedUserName = localStorage.getItem('userName');
+            if (!storedUserName) {
+                setShowSignup(true);
+            } else {
+                setShowModal(true);
+            }
+        }
+    };
+
     return (
         <div style={{ paddingBottom: "0.65rem" }}>
-            {/* مدال قبل از شروع آزمون */}
+
+            {/* فرم ثبت‌نام */}
+            {showSignup && (
+                <Signup setLocalSign={() => {
+                    setShowSignup(false);
+                    setShowModal(true);
+                }} />
+            )}
+
+            {/* مدال تأیید شروع آزمون */}
             {showModal && (
                 <div className="modal d-block" style={{ background: "rgba(0, 0, 0, 0.5)" }}>
                     <div className="modal-dialog modal-dialog-centered">
@@ -71,8 +91,10 @@ const Test = (props) => {
                             </div>
                             <div className="modal-footer">
                                 <button className="btn btn-secondary" onClick={() => setShowModal(false)}>انصراف</button>
-                                <button className="btn btn-primary" onClick={() => { setTestStarted(true); setShowModal(false); }}>شروع آزمون</button>
-
+                                <button className="btn btn-primary" onClick={() => {
+                                    setTestStarted(true);
+                                    setShowModal(false);
+                                }}>شروع آزمون</button>
                             </div>
                         </div>
                     </div>
@@ -81,25 +103,32 @@ const Test = (props) => {
 
             <div className="row justify-content-center gy-2 gy-xl-0">
                 <div className="col-12 col-lg-8">
-                    {!testStarted && !showModal && (
-                            <TestStartButton courseTime={courseTime} courseName={courseName} setShowModal={setShowModal} />
+                    {!testStarted && !showModal && !showSignup && (
+                        <TestStartButton
+                            courseTime={courseTime}
+                            courseName={courseName}
+                            setShowModal={checkUserName}
+                        />
                     )}
 
                     {data && testStarted && !testFinished && (
                         <>
                             <PreventRefresh />
                             <p className="text-black mb-2 border-top pt-1 mt-4 w-100 text-center">پاسخنامه</p>
-                                <div className="d-flex flex-row-reverse border-bottom pb-1 w-100 justify-content-center" style={{flexWrap:"wrap"}}>
-                                    {testState.questions.map(item => <div key={item.id} className="m-1 bg-light text-center rounded border" style={{width:"30px" , height:"50px" , overflow:"hidden"}}>
-                                        <p className="text-secondary border-bottom" style={{fontSize:"15px" , paddingTop:"2px"}}>{item.number}</p>
-                                        {item.status != "no-answer" && <div className="bg-secondary" style={{height:"30px" , width:"30px"}}></div>} 
-                                    </div>)}
-                                </div>
+                            <div className="d-flex flex-row-reverse border-bottom pb-1 w-100 justify-content-center" style={{ flexWrap: "wrap" }}>
+                                {testState.questions.map(item =>
+                                    <div key={item.id} className="m-1 bg-light text-center rounded border" style={{ width: "30px", height: "50px", overflow: "hidden" }}>
+                                        <p className="text-secondary border-bottom" style={{ fontSize: "15px", paddingTop: "2px" }}>{item.number}</p>
+                                        {item.status !== "no-answer" &&
+                                            <div className="bg-secondary" style={{ height: "30px", width: "30px" }}></div>}
+                                    </div>
+                                )}
+                            </div>
                             <p className="text-center fw-bold w-100 mt-3"><i className="bi bi-alarm"></i> زمان باقیمانده:</p>
                             <Timer setTestFinished={setTestFinished} testTime={20} />
                             <AnimatedProgress testTime={20} />
                             <div className='d-flex justify-content-center'>
-                            <button className="btn-main-2 w-50 rounded mt-3" onClick={() => setTestFinished(true)}>پایان آزمون</button>
+                                <button className="btn-main-2 w-50 rounded mt-3" onClick={() => setTestFinished(true)}>پایان آزمون</button>
                             </div>
                             <Questions data={data} />
                             <div className="text-center">
@@ -108,7 +137,12 @@ const Test = (props) => {
                         </>
                     )}
 
-                    {testFinished && <Report courseTime={courseTime} courseName={courseName} courseQuestions={courseQuestions} />}
+                    {testFinished &&
+                        <Report
+                            courseTime={courseTime}
+                            courseName={courseName}
+                            courseQuestions={courseQuestions}
+                        />}
                 </div>
             </div>
         </div>

@@ -19,7 +19,7 @@ const ArticleSection = ({article}) => {
                 <DateConverter initialDate={createdAt} />
             </div>
                 <div className='d-flex justify-content-center mb-3'><ArticleImage slug={slug} coverPhoto={coverPhoto} /></div>
-                <ArticleContent content={content} slug={slug} />
+                <ArticleContent mainTitle={mainTitle} content={content} slug={slug} />
         </div>
     );
 };

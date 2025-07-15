@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Offcanvas } from 'react-bootstrap';
 import Image from 'next/image';
 import Link from 'next/link';
+import SignInButton from '@/components/modules/SignInButton';
 
 function HambergurMenu({ show, handleClose, theme }) {
   const linkStyle = {
@@ -113,10 +114,9 @@ function HambergurMenu({ show, handleClose, theme }) {
                     style={linkStyle}
                     href="/hamyar/developer"
                   >
-                    مستندات
+                    درباره سامانه
                   </Link>
                 </li>
-
                 <li
                   className={liClassName}
                   style={{ borderBottom: getBorderStyle() }}
@@ -125,10 +125,19 @@ function HambergurMenu({ show, handleClose, theme }) {
                     onClick={handleClose}
                     className={linkClassName}
                     style={linkStyle}
-                    href="/"
+                    href="/hamyar/about-school"
                   >
+                    درباره ما
+                  </Link>
+                </li>
+
+                <li className={`p-3 border-bottom`} style={{ borderBottom: `${theme === "theme-night" && "1px solid #222f43"}` }}>
+                  <Link onClick={handleClose} className={linkClassName} style={{ ...linkStyle, color: "#654fef" }} href="/">
                     بازگشت به سایت دبستان
                   </Link>
+                </li>
+                <li className='p-3'>
+                  <SignInButton />
                 </li>
               </ul>
             </nav>

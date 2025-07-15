@@ -3,10 +3,26 @@ import { useRouter } from 'next/router';
 import ArticlesPage from "../../components/templates/ArticlesPage";
 import DefaultLayout from "@/components/layout/DefaultLayout";
 
+
+import articles from '@/DB/articles/index'; 
+
+
+export async function getStaticProps() {
+  // داده‌ها رو از فایل‌های JS بخون
+  // یا اگر نیاز داری می‌تونی API call هم بزنی
+
+  return {
+    props: {
+      articles,
+    }
+  };
+}
+
 export default function Articles() {
   const router = useRouter();
   const canonicalUrl = `https://jahanaraschool.ir${router.asPath === "/" ? "" : router.asPath}`;
 
+  
   return (
     <>
       <Head>
@@ -56,7 +72,7 @@ export default function Articles() {
       </Head>
       <DefaultLayout>
       <main className="page-padding-tops pb-4" style={{ minHeight: "100vh" }}>
-        <ArticlesPage />
+        <ArticlesPage articles={articles} />
       </main>
       </DefaultLayout>
     </>

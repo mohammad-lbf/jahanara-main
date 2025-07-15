@@ -9,7 +9,7 @@ import CourseTumbnailContainer from './CourseTumbnailContainer';
 // import testData from '@/assets/Tests/Grammar/A1Level';
 
 const CourseContent = ({testStarted , setTestStarted , testFinished , setTestFinished ,courseName,coursePublishDate,courseTumbnailSrc,courseCaption,courseQuestions,courseSlug,courseTime,courseVideos,courseEpizodes}) => {
-
+console.log(courseTumbnailSrc)
     return (
         <div className='mt-2'>
             {
@@ -28,7 +28,7 @@ const CourseContent = ({testStarted , setTestStarted , testFinished , setTestFin
             </> 
             :<></>
            }
-            <ShareSecton />
+            <ShareSecton slug={courseSlug} mainTitle={courseName} />
         </div>
     );
 };

@@ -2,11 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import CoursesCards from './CoursesCards';
 
-const CoursesSection = () => {
+const CoursesSection = ({courses}) => {
     return (
         <div className='container shadow-sm border my-4 py-4 rounded'
                style={{
-            background: "linear-gradient(135deg,rgb(255, 249, 231) 0%,rgb(232, 255, 238) 100%)",
+                // background: `linear-gradient(135deg,rgb(234, 236, 255), #ffffff)`,
           }}>
         
         <div className='row align-items-center'>
@@ -22,7 +22,7 @@ const CoursesSection = () => {
                             >
                             با آموزش‌های سامانه یادگیری مستمر دبستان شهید جهان‌آرا، با اطمینان و مهارت روش‌های نوین تدریس را اجرا کنید!
                             </p>
-                            <CoursesCards />
+                            <CoursesCards courses={courses} />
                             <Link style={{ width: "fit-content" }} href={'/mostamar/courses'} className="mx-auto btn-main-2 mt-3 text-white d-flex align-items-center">
                                 <span style={{ fontFamily: "KalamehWeb-Bold" }}>
                                     مشاهده همه دوره ها

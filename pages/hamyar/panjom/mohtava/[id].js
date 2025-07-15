@@ -100,7 +100,7 @@ const Page = ({ currentFileData, data }) => {
                     <div>
                         <div className='row justify-content-center justify-content-lg-between align-items-start'>
                                 <div className='col-12 col-lg-2 d-flex justify-content-center justify-content-lg-start'>
-                                        <Image style={{width:"180px" , height:"220px"}} className='border' src={currentFileData.image} width={230} height={320} />
+                                        <Image alt='book' style={{width:"180px" , height:"220px"}} className='border' src={currentFileData.image} width={230} height={320} />
                                 </div>
                                 <div className={`col-12 ${currentFileData.fileType == "video" ? "col-lg-6" : "col-lg-10"} d-flex flex-column align-items-center align-items-lg-start mt-3`}>
                                         <h2 className='mb-3' style={{fontFamily:"KalamehWeb-bold" , fontSize:"22px"}}>{currentFileData.name}</h2>

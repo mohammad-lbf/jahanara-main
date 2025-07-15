@@ -1,0 +1,16 @@
+.mainFooter{
+    background-color: #090736;
+    
+}
+.scaleHover{
+    color: #f5f5f5;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+.scaleHover:hover{
+    transform: scale(1.1);
+    color: rgb(255, 45, 45);
+}
+.textColorMilky{
+    color: #f5f5f5;
+}

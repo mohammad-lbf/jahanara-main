@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const FirstBanner = () => {
   return (
@@ -26,7 +27,7 @@ const FirstBanner = () => {
               color: "#ffffff",
             }}
           >
-            سامانه همیار معلم | دبستان شهید جهان آرا
+            سامانه همیار | دبستان شهید جهان آرا
           </h2>
           <p
             className="mt-3 mb-4 mb-lg-0 text-center text-lg-end"
@@ -39,14 +40,28 @@ const FirstBanner = () => {
               margin: "0",
             }}
           >
-            سامانه همیار معلم دبستان شهید جهان آرا یک پلتفرم نوین و کارآمد است
+            سامانه همیار دبستان شهید جهان آرا یک پلتفرم نوین و کارآمد است
             که با هدف ارتقاء کیفیت آموزش و تسهیل فرآیند یادگیری برای معلمان و
             دانش‌آموزان طراحی شده است. این سامانه ابزارهایی نظیر مشاهده کتب
             درسی، نمونه سؤالات، طرح درس‌ها و محتوای آموزشی را به‌صورت ساختاریافته
             ارائه می‌دهد تا فرآیند تدریس و یادگیری را ساده‌تر و جذاب‌تر کند.
           </p>
+          <div className="text-center text-lg-end mt-4 w-100">
+            <Link
+              href="/hamyar/developer"
+              className="btn btn-light w-100"
+              style={{
+                fontFamily: "KalamehWeb-Bold",
+                fontSize: "14px",
+                padding: "10px 20px",
+                color: "#006200",
+              }}
+            >
+              اطلاعات بیشتر
+            </Link>
+          </div>
         </div>
-        <div className="col-12 col-lg-5 text-center text-lg-start mt-4 mt-lg-0">
+        <div className="col-12 col-lg-5 text-center text-lg-center mt-4 mt-lg-0">
           <motion.div
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}

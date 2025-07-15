@@ -11,8 +11,10 @@ import GallerySection from '../modules/HomePage/GallerySection';
 import ArticlesSection from '../modules/HomePage/ArticlesSection';
 import HonorsBoard from '../modules/HomePage/HonorsBoard';
 import ContactInfo from '../modules/HomePage/ContactInfo';
+import UsefulLinks from '../modules/HomePage/UsefulLinks';
+import CustomSlider from '../mostamarComponents/modules/HomePage/CustomSlider';
 
-const HomePage = () => {
+const HomePage = ({ articles, courses }) => {
   return (
     <div className="cover-home-3 page-padding-tops">
       
@@ -109,8 +111,9 @@ const HomePage = () => {
 
       <HonorsBoard />
       <SitesSection />
-      <ArticlesSection />
-      <CoursesSection />
+      <UsefulLinks />
+      <CustomSlider articles={articles} />
+      <CoursesSection courses={courses} />
       <GallerySection />
       <ContactInfo />
     </div>

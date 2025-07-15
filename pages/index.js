@@ -3,6 +3,21 @@ import { useRouter } from 'next/router';
 import HomePage from "@/components/templates/HomePage";
 import DefaultLayout from "@/components/layout/DefaultLayout";
 
+import articles from '@/DB/articles/index'; 
+import courses from '@/DB/courses';
+
+
+export async function getStaticProps() {
+  // داده‌ها رو از فایل‌های JS بخون
+  // یا اگر نیاز داری می‌تونی API call هم بزنی
+
+  return {
+    props: {
+      articles,
+      courses,
+    }
+  };
+}
 export default function Home() {
   const router = useRouter();
   const canonicalUrl = `https://jahanaraschool.ir${router.asPath === "/" ? "" : router.asPath}`;
@@ -56,7 +71,7 @@ export default function Home() {
       </Head>
       <DefaultLayout>
       <main style={{ minHeight: "100vh" }}>
-        <HomePage />
+      <HomePage articles={articles} courses={courses} />
       </main>
       </DefaultLayout>
     </>
